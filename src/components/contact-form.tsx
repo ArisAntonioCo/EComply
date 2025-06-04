@@ -51,20 +51,49 @@ export default function ContactForm() {
     } finally {
       setIsSubmitting(false);
     }
-  };
-  if (isSubmitted) {
+  };  if (isSubmitted) {
     return (
-      <section id="contact" className="py-24 sm:py-32 bg-slate-900">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section id="contact" className="py-24 sm:py-32 bg-slate-900 relative overflow-hidden">
+        {/* Technical Grid Background */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+        
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
-            <Card className="border-green-600 bg-slate-800 text-white">
-              <CardContent className="pt-6">
+            <Card className="border-green-500/20 bg-gradient-to-br from-green-950/50 to-slate-800 text-white shadow-2xl shadow-green-500/10">
+              <CardContent className="pt-8 pb-8">
                 <div className="text-center">
-                  <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />                  <h3 className="mt-4 text-base font-semibold text-green-400">
+                  {/* Success Icon with Animation */}
+                  <div className="relative mx-auto mb-6 w-20 h-20">
+                    <div className="absolute inset-0 bg-green-500/20 rounded-full animate-ping"></div>
+                    <div className="relative flex items-center justify-center w-20 h-20 bg-green-500/10 border-2 border-green-500/30 rounded-full">
+                      <CheckCircle className="w-10 h-10 text-green-400" />
+                    </div>
+                  </div>
+                  
+                  {/* Success Title */}
+                  <h3 className="text-2xl font-bold text-green-400 mb-3">
                     Message Sent Successfully!
-                  </h3>                  <p className="mt-2 text-sm text-slate-300">
-                    Thank you for contacting us! Your message has been sent and we&apos;ll get back to you soon.
+                  </h3>
+                  
+                  {/* Success Description */}
+                  <p className="text-lg text-slate-300 mb-4 leading-relaxed">
+                    Thank you for contacting us! Your message has been sent and we'll get back to you soon.
                   </p>
+                  
+                  {/* Additional Info */}
+                  <div className="flex items-center justify-center gap-4 mt-6 text-sm text-slate-400">
+                    <div className="flex items-center gap-2">
+                      <Mail className="w-4 h-4 text-green-400" />
+                      <span>Email delivered to our team</span>
+                    </div>
+                  </div>
+                  
+                  {/* Response Time Indicator */}
+                  <div className="mt-6 p-4 bg-slate-700/50 rounded-lg border border-slate-600/50">
+                    <p className="text-sm text-slate-300">
+                      <span className="font-medium text-blue-400">Expected Response Time:</span> Usually within 24 hours
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
