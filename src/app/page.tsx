@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import ContactForm from "@/components/contact-form";
-import { ClipboardCheck, Bot, BarChart3, MapPin, Shield, Zap, CheckCircle, Users, TrendingUp, ArrowRight, Code, FileText, Database } from "lucide-react";
+import { ClipboardCheck, Bot, BarChart3, MapPin, Shield, Zap, CheckCircle, Users, TrendingUp, ArrowRight, FileText } from "lucide-react";
 
 export default function Home() {
   return (

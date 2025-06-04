@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Terminal, CheckCircle, Code } from "lucide-react";
+import { Mail, CheckCircle } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -62,9 +62,8 @@ export default function ContactForm() {
                 <div className="text-center">
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />                  <h3 className="mt-4 text-lg font-semibold text-green-400">
                     Message Sent Successfully!
-                  </h3>
-                  <p className="mt-2 text-slate-300">
-                    Thank you for contacting us! Your message has been sent and we'll get back to you soon.
+                  </h3>                  <p className="mt-2 text-slate-300">
+                    Thank you for contacting us! Your message has been sent and we&apos;ll get back to you soon.
                   </p>
                 </div>
               </CardContent>
@@ -88,9 +87,8 @@ export default function ContactForm() {
           
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Contact Us
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-slate-300">
-            Have questions about Ecomply or need help with compliance? We're here to help.
+          </h2>          <p className="mt-6 text-lg leading-8 text-slate-300">
+            Have questions about Ecomply or need help with compliance? We&apos;re here to help.
           </p>
         </div>
 

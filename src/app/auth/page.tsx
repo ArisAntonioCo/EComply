@@ -6,7 +6,7 @@ import { supabase } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
-import { ClipboardCheck, Shield, Users, TrendingUp, Eye, EyeOff, CheckCircle, AlertCircle, Terminal, Code, Database } from 'lucide-react'
+import { ClipboardCheck, Shield, Users, TrendingUp, Eye, EyeOff, CheckCircle, AlertCircle } from 'lucide-react'
 
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true)

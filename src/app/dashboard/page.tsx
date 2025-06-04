@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
 import DocumentAnalysisWorkflow from '@/components/document-analysis-workflow'
-import { Shield, ClipboardCheck } from 'lucide-react'
+import { ClipboardCheck } from 'lucide-react'
 
 export default function Dashboard() {
   const [loading, setLoading] = useState(false)
