@@ -54,9 +54,12 @@ export default function ContactForm() {
   };  if (isSubmitted) {
     return (
       <section id="contact" className="py-24 sm:py-32 bg-slate-900 relative overflow-hidden">
-        {/* Technical Grid Background */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
-        
+        {/* Static radial highlights */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-green-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-blue-500/8 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-emerald-500/6 rounded-full blur-2xl"></div>
+        </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
             <Card className="border-green-500/20 bg-gradient-to-br from-green-950/50 to-slate-800 text-white shadow-2xl shadow-green-500/10">
@@ -100,14 +103,16 @@ export default function ContactForm() {
         </div>
       </section>
     );
-  }
-  return (
+  }  return (
     <section id="contact" className="py-24 sm:py-32 bg-slate-900 relative overflow-hidden">
-      {/* Technical Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
-      
+      {/* Static radial highlights */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-indigo-500/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-cyan-500/6 rounded-full blur-2xl"></div>
+      </div>
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">        <div className="mx-auto max-w-2xl text-center">          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-600 bg-transparent text-slate-300 text-xs font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-600 bg-slate-800 text-slate-300 text-xs font-medium mb-6">
             <Mail className="w-3 h-3" />
             Get in Touch
           </div>
@@ -120,15 +125,14 @@ export default function ContactForm() {
         </div>
 
         <div className="mx-auto mt-16 max-w-xl">
-          <Card className="bg-slate-800 border-slate-700 text-white">            <CardHeader>
+          <Card className="bg-slate-800 border-slate-700 text-white shadow-lg">            <CardHeader>
               <CardTitle className="flex items-center gap-2 text-white text-lg">
                 <Mail className="w-4 h-4 text-blue-400" />
                 <span>Get in Touch</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">                  <div>
+              <form onSubmit={handleSubmit} className="space-y-6">                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">                  <div>
                     <label htmlFor="name" className="block text-xs font-medium text-slate-400 mb-2">
                       Name
                     </label>
@@ -140,7 +144,7 @@ export default function ContactForm() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your name"
-                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400 focus:border-blue-500 focus:ring-blue-500"
                     />
                   </div>                  <div>
                     <label htmlFor="email" className="block text-xs font-medium text-slate-400 mb-2">
@@ -154,7 +158,7 @@ export default function ContactForm() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="your@email.com"
-                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400 focus:border-blue-500 focus:ring-blue-500"
                     />
                   </div>
                 </div>                <div>
@@ -169,7 +173,7 @@ export default function ContactForm() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="What's this about?"
-                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400 focus:border-blue-500 focus:ring-blue-500"
                   />
                 </div>                <div>
                   <label htmlFor="message" className="block text-xs font-medium text-slate-400 mb-2">
@@ -183,9 +187,9 @@ export default function ContactForm() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us how we can help you..."
-                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400 focus:border-blue-500 focus:ring-blue-500"
                   />
-                </div>                <Button 
+                </div><Button 
                   type="submit" 
                   disabled={isSubmitting}
                   size="sm"
@@ -196,16 +200,15 @@ export default function ContactForm() {
                 </Button>
               </form>
             </CardContent>
-          </Card>
-            {/* Contact Info */}
+          </Card>          {/* Contact Info */}
           <div className="mt-8 text-center p-6 bg-slate-800 rounded-lg border border-slate-700">
-            <p className="text-sm text-slate-400 mb-2">
+            <p className="text-sm text-slate-300 mb-2">
               For technical support or partnership inquiries:
             </p>
             <p className="text-sm font-medium text-blue-400">
               arisantonioco@gmail.com
             </p>
-            <div className="flex items-center justify-center gap-4 mt-4 text-xs text-slate-500">
+            <div className="flex items-center justify-center gap-4 mt-4 text-xs text-slate-400">
               <span>Usually responds within 24 hours</span>
             </div>
           </div>
