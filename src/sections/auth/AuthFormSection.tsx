@@ -97,12 +97,13 @@ export default function AuthFormSection() {
         const { error } = await supabase.auth.signUp({
           email,
           password,
-          options: {
-            emailRedirectTo: 'https://e-comply.vercel.app/dashboard'
-          }
         })
         if (error) throw error
-        setMessage('Account created! Please check your email to confirm your account. If you don\'t receive an email, please check your spam folder or contact support.')
+        setMessage('Account created successfully! Redirecting...')
+        // Redirect to dashboard
+        setTimeout(() => {
+          window.location.href = '/dashboard'
+        }, 1000)
       }
     } catch (error: unknown) {
       const errorMessage = error instanceof Error ? error.message : 'An error occurred'
