@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import ContactForm from "@/components/contact-form";
+import { ClipboardCheck, Bot, BarChart3, MapPin } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <div className="max-w-7xl mx-auto px-6 py-16 lg:px-8">
         {/* Hero Section */}
-        <div className="text-center">
-          <div className="flex items-center justify-center space-x-2 mb-8">
-            <span className="text-6xl">📋</span>
+        <div className="text-center">          <div className="flex items-center justify-center space-x-3 mb-8">
+            <ClipboardCheck className="w-12 h-12 text-blue-600" />
             <h1 className="text-5xl font-bold text-gray-900">Ecomply</h1>
           </div>
           
@@ -33,9 +33,8 @@ export default function Home() {
         </div>
 
         {/* Features Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-            <div className="text-4xl mb-4">🤖</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">          <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+            <Bot className="w-12 h-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">AI-Powered Analysis</h3>
             <p className="text-gray-600">
               Advanced AI reviews your documents against RA No. 11967 requirements
@@ -43,7 +42,7 @@ export default function Home() {
           </div>
           
           <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-            <div className="text-4xl mb-4">📊</div>
+            <BarChart3 className="w-12 h-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Compliance Scoring</h3>
             <p className="text-gray-600">
               Get detailed compliance scores and actionable recommendations
@@ -51,7 +50,7 @@ export default function Home() {
           </div>
           
           <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-            <div className="text-4xl mb-4">🇵🇭</div>
+            <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Philippine Law Focus</h3>
             <p className="text-gray-600">
               Specifically designed for Filipino e-commerce compliance requirements

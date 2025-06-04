@@ -87,11 +87,14 @@ Gemini analyzes pasted document content per document type and returns structured
 
 ## UI Requirements
 ### 1. Landing Page
-- Hero section with quick intro to RA No. 11967
-- Compliance value prop
-- CTA: Paste your document
-- Modern, minimalist design with ample whitespace
-- Subtle background patterns or gradients
+- Hero section with compelling headline and subtext about RA No. 11967
+- Modern gradient backgrounds and sophisticated color schemes
+- Feature showcase with icon-supported value propositions
+- Social proof and credibility indicators
+- Engaging CTAs with clear user journey guidance
+- Interactive elements and subtle animations
+- Professional layout inspired by top-tier SaaS products (Supabase, Vercel style)
+- Responsive design that looks exceptional on all devices
 
 ### 2. Dashboard (Post Login)
 - Step-by-step progress indicator (roadmap style)
@@ -126,10 +129,29 @@ Gemini analyzes pasted document content per document type and returns structured
 
 ## Tech Stack
 - **Frontend**: Next.js (with TypeScript), TailwindCSS, shadcn/ui
+- **Typography**: JetBrains Mono font for enhanced readability and modern aesthetic
+- **Icons**: Heroicons for consistent, minimalist iconography
 - **Auth**: Supabase (email/password)
 - **Text Input**: Basic HTML `<textarea>` + state
 - **AI Integration**: Google Gemini API
 - **Deployment**: Vercel
+
+## Design System Requirements
+### Typography
+- **Primary Font**: JetBrains Mono for all text content
+- **Font Weights**: Regular (400), Medium (500), Bold (700)
+- **Line Heights**: Optimized for readability across devices
+
+### Iconography
+- **Icon Library**: Heroicons (24px outline variants)
+- **Usage**: Replace all emoji icons with semantic Heroicons
+- **Consistency**: Uniform sizing and stroke width across all icons
+
+### Visual Design Standards
+- **Landing Page**: Modern, engaging design inspired by high-quality SaaS products (Supabase-style)
+- **Feature Presentation**: Well-structured sections with clear value propositions
+- **User Impact**: Maximum visual appeal and user engagement
+- **Minimalist Approach**: Clean, uncluttered interface with purposeful design elements
 
 ## Functional Requirements
 - User authentication
@@ -172,6 +194,33 @@ Gemini analyzes pasted document content per document type and returns structured
 - AI-generated compliant boilerplates
 - Save document history
 - Section-highlighting in original text
+- Advanced analytics dashboard
+- Multi-language support
+- API for third-party integrations
+
+## Visual Design Improvement Initiative
+### Overview
+A comprehensive visual redesign to transform Ecomply into a premium, user-focused compliance platform that maximizes user engagement and trust.
+
+### Design Objectives
+1. **Professional Excellence**: Create a polished, enterprise-grade appearance
+2. **User Engagement**: Design for maximum visual impact and user retention
+3. **Modern Aesthetics**: Implement contemporary design trends and best practices
+4. **Brand Consistency**: Establish a cohesive visual identity throughout the application
+
+### Key Improvements
+- **Typography**: Migrate to JetBrains Mono for enhanced readability and technical credibility
+- **Iconography**: Replace all emoji icons with professional Heroicons
+- **Landing Page**: Complete redesign with Supabase-inspired layout and feature presentation
+- **Color Scheme**: Sophisticated, accessible color palette with semantic usage
+- **Layout**: Improved spacing, typography hierarchy, and visual balance
+- **Interactive Elements**: Enhanced hover states, transitions, and micro-interactions
+
+### Success Metrics
+- Improved user engagement rates
+- Increased conversion from landing page to registration
+- Enhanced user satisfaction and trust indicators
+- Professional brand perception
 
 ---
 

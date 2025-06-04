@@ -1,14 +1,14 @@
 import Link from "next/link";
+import { ClipboardCheck } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          {/* Company Info */}
-          <div className="space-y-4">
+          {/* Company Info */}          <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-blue-400">📋</span>
+              <ClipboardCheck className="w-8 h-8 text-blue-400" />
               <span className="text-xl font-bold">Ecomply</span>
             </div>
             <p className="text-gray-300 max-w-md">

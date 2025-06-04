@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ClipboardCheck, Lock, FileText, BarChart3, Lightbulb, Bot, RotateCcw, Mail, Download, AlertTriangle } from "lucide-react";
 
 interface AnalysisResult {
   document_type: string;
@@ -52,13 +53,12 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
       default: return "Analysis Results";
     }
   };
-
   const getDocumentIcon = () => {
     switch (documentType) {
-      case "terms": return "📄";
-      case "privacy": return "🔒";
-      case "combined": return "📋";
-      default: return "📊";
+      case "terms": return <FileText className="w-10 h-10 text-blue-600" />;
+      case "privacy": return <Lock className="w-10 h-10 text-blue-600" />;
+      case "combined": return <ClipboardCheck className="w-10 h-10 text-blue-600" />;
+      default: return <BarChart3 className="w-10 h-10 text-blue-600" />;
     }
   };
   const getImprovementSuggestions = () => {
@@ -115,9 +115,8 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
       {/* Overall Compliance Header */}
       <Card className={`${getScoreBgColor(overallScore)}`}>
         <CardHeader>
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <span className="text-4xl">{getDocumentIcon()}</span>
+          <div className="text-center">            <div className="flex items-center justify-center gap-3 mb-4">
+              {getDocumentIcon()}
               <CardTitle className="text-2xl">{getDocumentTitle()}</CardTitle>
             </div>
             <div className={`text-6xl font-bold ${getScoreColor(overallScore)}`}>
@@ -133,9 +132,8 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
         // Combined Report View
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <span className="text-2xl">📄</span>
+            <CardHeader>              <CardTitle className="flex items-center gap-2">
+                <FileText className="w-6 h-6 text-blue-600" />
                 Terms of Service
               </CardTitle>
             </CardHeader>
@@ -149,9 +147,8 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
             </CardContent>
           </Card>
           <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <span className="text-2xl">🔒</span>
+            <CardHeader>              <CardTitle className="flex items-center gap-2">
+                <Lock className="w-6 h-6 text-blue-600" />
                 Privacy Policy
               </CardTitle>
             </CardHeader>
@@ -208,9 +205,8 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
 
       {/* Improvement Suggestions */}
       <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <span className="text-2xl">💡</span>
+        <CardHeader>          <CardTitle className="flex items-center gap-2">
+            <Lightbulb className="w-6 h-6 text-blue-600" />
             Improvement Suggestions
           </CardTitle>
         </CardHeader>
@@ -238,9 +234,8 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
       {/* AI Recommendations */}
       {results.recommendations && Object.keys(results.recommendations).length > 0 && (
         <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <span className="text-2xl">🤖</span>
+          <CardHeader>            <CardTitle className="flex items-center gap-2">
+              <Bot className="w-6 h-6 text-blue-600" />
               AI Recommendations
             </CardTitle>
           </CardHeader>
@@ -258,10 +253,10 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
       )}
 
       {/* Action Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 pt-6">
-        {onRestart && (
-          <Button onClick={onRestart} variant="outline" className="flex-1">
-            🔄 Start New Analysis
+      <div className="flex flex-col sm:flex-row gap-4 pt-6">        {onRestart && (
+          <Button onClick={onRestart} variant="outline" className="flex-1 flex items-center gap-2">
+            <RotateCcw className="w-4 h-4" />
+            Start New Analysis
           </Button>
         )}
         {onContinue && (
@@ -269,24 +264,24 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
             {documentType === "terms" ? "Continue to Privacy Policy →" : 
              documentType === "privacy" ? "View Combined Report →" : "Continue"}
           </Button>
-        )}
-        {showDownloadReport && (
-          <Button className="flex-1" disabled>
-            📄 Download Full Report
+        )}        {showDownloadReport && (
+          <Button className="flex-1 flex items-center gap-2" disabled>
+            <Download className="w-4 h-4" />
+            Download Full Report
             <span className="ml-2 text-xs">(Coming Soon)</span>
           </Button>
         )}
-        <Button variant="outline" className="flex-1" disabled>
-          📧 Email Report
+        <Button variant="outline" className="flex-1 flex items-center gap-2" disabled>
+          <Mail className="w-4 h-4" />
+          Email Report
           <span className="ml-2 text-xs">(Coming Soon)</span>
         </Button>
       </div>
 
       {/* Legal Disclaimer */}
       <Card className="bg-yellow-50 border-yellow-200">
-        <CardContent className="pt-6">
-          <div className="flex items-start gap-3">
-            <span className="text-2xl">⚠️</span>
+        <CardContent className="pt-6">          <div className="flex items-start gap-3">
+            <AlertTriangle className="w-6 h-6 text-yellow-600 mt-1" />
             <div>
               <h4 className="font-semibold text-yellow-800 mb-2">Legal Disclaimer</h4>
               <p className="text-sm text-yellow-700">
