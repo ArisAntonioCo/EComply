@@ -13,32 +13,30 @@ export default function Home() {
         
         <div className="relative max-w-7xl mx-auto px-6 py-24 lg:px-8 lg:py-32">
           <div className="text-center max-w-4xl mx-auto">            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium mb-8">
-              <Shield className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-600 bg-transparent text-slate-300 text-xs font-medium mb-8">
+              <Shield className="w-3 h-3" />
               RA No. 11967 Compliance
             </div>{/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium mb-6 leading-tight">
               E-Commerce Legal 
               <span className="block text-blue-400">
                 Compliance Made Simple
               </span>
-            </h1>
-
-            {/* Subheadline */}
-            <p className="text-xl lg:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            </h1>            {/* Subheadline */}
+            <p className="text-sm lg:text-sm text-slate-300 mb-12 max-w-3xl mx-auto font-semibold leading-relaxed">
               Ensure your e-commerce platform complies with Philippine E-Commerce Law RA No. 11967. 
               Get instant AI-powered analysis of your Terms of Service and Privacy Policy.
-            </p>{/* CTA Buttons */}
+            </p>            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Link href="/auth">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-medium">
-                  <ClipboardCheck className="w-5 h-5 mr-2" />
+                <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-base font-medium">
+                  <ClipboardCheck className="w-4 h-4 mr-2" />
                   Start Free Analysis
                 </Button>
               </Link>              <Link href="/dashboard">
-                <Button variant="outline" size="lg" className="px-8 py-4 text-lg font-medium border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white hover:border-slate-600">
+                <Button variant="outline" size="sm" className="px-6 py-3 text-base font-medium border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white hover:border-slate-600">
                   View Demo
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  <ArrowRight className="w-3 h-3 ml-2" />
                 </Button>
               </Link>
             </div>
@@ -60,96 +58,127 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>      {/* Features Section */}
-      <section id="features" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      </section>      {/* Features Section - Modern Design */}
+      <section id="features" className="relative py-32 bg-slate-50 overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.03)_1px,transparent_1px)] bg-[size:32px_32px] opacity-60"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Everything You Need for Compliance
+          <div className="text-center max-w-4xl mx-auto mb-20">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-sm font-medium mb-8">
+              <Shield className="w-3.5 h-3.5" />
+              Comprehensive Compliance Platform
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
+              Everything You Need for 
+              <span className="text-blue-600"> Compliance</span>
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Comprehensive tools designed specifically for Filipino e-commerce businesses to ensure legal compliance
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+              Comprehensive tools designed specifically for Filipino e-commerce businesses to ensure legal compliance and build customer trust.
             </p>
-          </div>
-
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          </div>          {/* Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Feature 1 */}
-            <div className="p-8 bg-blue-50 rounded-lg border border-blue-200 hover:border-blue-300 transition-colors">
-              <div className="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
-                <Bot className="w-8 h-8 text-white" />
+            <div className="group relative p-8 bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300/80 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/5 hover:-translate-y-1">
+              <div className="absolute inset-0 rounded-2xl bg-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative">
+                <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Bot className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">AI-Powered Analysis</h3>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  Advanced artificial intelligence reviews your Terms of Service and Privacy Policy for compliance gaps with instant insights.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">AI-Powered Analysis</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Advanced artificial intelligence reviews your Terms of Service and Privacy Policy for compliance gaps.
-              </p>
             </div>
 
             {/* Feature 2 */}
-            <div className="p-8 bg-green-50 rounded-lg border border-green-200 hover:border-green-300 transition-colors">
-              <div className="w-16 h-16 bg-green-600 rounded-lg flex items-center justify-center mb-6">
-                <BarChart3 className="w-8 h-8 text-white" />
+            <div className="group relative p-8 bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300/80 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/5 hover:-translate-y-1">
+              <div className="absolute inset-0 rounded-2xl bg-emerald-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative">
+                <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <BarChart3 className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-emerald-700 transition-colors">Detailed Reports</h3>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  Get comprehensive compliance reports with specific recommendations and actionable improvements for your business.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Detailed Reports</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Get comprehensive compliance reports with specific recommendations and actionable improvements.
-              </p>
             </div>
 
             {/* Feature 3 */}
-            <div className="p-8 bg-purple-50 rounded-lg border border-purple-200 hover:border-purple-300 transition-colors">
-              <div className="w-16 h-16 bg-purple-600 rounded-lg flex items-center justify-center mb-6">
-                <MapPin className="w-8 h-8 text-white" />
+            <div className="group relative p-8 bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300/80 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/5 hover:-translate-y-1">
+              <div className="absolute inset-0 rounded-2xl bg-violet-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative">
+                <div className="w-10 h-10 bg-violet-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Philippine Law Focus</h3>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  Specifically designed for RA No. 11967 and other Philippine e-commerce regulations with local expertise.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Philippine Law Focus</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Specifically designed for RA No. 11967 and other Philippine e-commerce regulations.
-              </p>
             </div>
 
             {/* Feature 4 */}
-            <div className="p-8 bg-orange-50 rounded-lg border border-orange-200 hover:border-orange-300 transition-colors">
-              <div className="w-16 h-16 bg-orange-600 rounded-lg flex items-center justify-center mb-6">
-                <Shield className="w-8 h-8 text-white" />
+            <div className="group relative p-8 bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300/80 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/5 hover:-translate-y-1">
+              <div className="absolute inset-0 rounded-2xl bg-orange-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative">
+                <div className="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Shield className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-orange-700 transition-colors">Secure & Private</h3>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  Your documents are processed securely and never stored. Complete privacy protection guaranteed with enterprise-grade security.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Secure & Private</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Your documents are processed securely and never stored. Complete privacy protection guaranteed.
-              </p>
             </div>
 
             {/* Feature 5 */}
-            <div className="p-8 bg-teal-50 rounded-lg border border-teal-200 hover:border-teal-300 transition-colors">
-              <div className="w-16 h-16 bg-teal-600 rounded-lg flex items-center justify-center mb-6">
-                <Zap className="w-8 h-8 text-white" />
+            <div className="group relative p-8 bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300/80 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/5 hover:-translate-y-1">
+              <div className="absolute inset-0 rounded-2xl bg-cyan-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative">
+                <div className="w-10 h-10 bg-cyan-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Zap className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-cyan-700 transition-colors">Lightning Fast</h3>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  Get your compliance analysis in seconds, not days. Quick turnaround for busy business owners who need results now.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Lightning Fast</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Get your compliance analysis in seconds, not days. Quick turnaround for busy business owners.
-              </p>
             </div>
 
             {/* Feature 6 */}
-            <div className="p-8 bg-indigo-50 rounded-lg border border-indigo-200 hover:border-indigo-300 transition-colors">
-              <div className="w-16 h-16 bg-indigo-600 rounded-lg flex items-center justify-center mb-6">
-                <Users className="w-8 h-8 text-white" />
+            <div className="group relative p-8 bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300/80 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/5 hover:-translate-y-1">
+              <div className="absolute inset-0 rounded-2xl bg-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative">
+                <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Users className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-indigo-700 transition-colors">Expert Support</h3>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  Get help from our compliance experts who understand Filipino e-commerce law and regulations inside and out.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Expert Support</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Get help from our compliance experts who understand Filipino e-commerce law and regulations.
-              </p>
+            </div>
+          </div>
+
+          {/* Bottom decoration */}
+          <div className="mt-20 flex justify-center">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200 text-slate-500 text-sm">
+              <CheckCircle className="w-4 h-4 text-emerald-500" />
+              <span>Trusted by 500+ Filipino businesses</span>
             </div>
           </div>
         </div>
-      </section>      {/* Benefits Section */}
+      </section>{/* Benefits Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
-            <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
-                Why Choose Ecomply?
+            <div>              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8">
+                Why Choose EComply?
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -157,7 +186,7 @@ export default function Home() {
                     <CheckCircle className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Legal Protection</h3>
+                    <h3 className="font-semibold text-base text-gray-900 mb-2">Legal Protection</h3>
                     <p className="text-gray-600">Protect your business from legal issues and potential penalties by ensuring your policies meet all requirements.</p>
                   </div>
                 </div>
@@ -167,7 +196,7 @@ export default function Home() {
                     <TrendingUp className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Build Customer Trust</h3>
+                    <h3 className="font-semibold text-base text-gray-900 mb-2">Build Customer Trust</h3>
                     <p className="text-gray-600">Show your customers that you take their privacy and rights seriously with compliant, transparent policies.</p>
                   </div>
                 </div>
@@ -177,7 +206,7 @@ export default function Home() {
                     <Users className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Save Time & Money</h3>
+                    <h3 className="font-semibold text-base text-gray-900 mb-2">Save Time & Money</h3>
                     <p className="text-gray-600">Avoid expensive legal consultations and get instant compliance analysis that would normally cost thousands.</p>
                   </div>
                 </div>
@@ -228,25 +257,24 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
         
         <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">          {/* Header */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium mb-6">
-            <ClipboardCheck className="w-4 h-4" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-600 bg-transparent text-slate-300 text-xs font-medium mb-6">
+            <ClipboardCheck className="w-3 h-3" />
             Ready to Get Started?
           </div>
           
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+          <h2 className="text-2xl lg:text-3xl font-bold mb-6">
             Start Your Compliance Analysis
-          </h2>
-          <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Join hundreds of Filipino e-commerce businesses using Ecomply to stay compliant with RA No. 11967. 
+          </h2>          <p className="text-lg text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Join hundreds of Filipino e-commerce businesses using EComply to stay compliant with RA No. 11967. 
             Start your free analysis in under 5 minutes.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link href="/auth">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-medium">
-                <ClipboardCheck className="w-5 h-5 mr-2" />
+              <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-base font-medium">
+                <ClipboardCheck className="w-4 h-4 mr-2" />
                 Start Your Free Analysis
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
             

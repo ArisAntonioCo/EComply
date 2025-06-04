@@ -11,15 +11,14 @@ export default function Footer() {
               <ClipboardCheck className="w-8 h-8 text-blue-400" />
               <span className="text-xl font-bold">Ecomply</span>
             </div>
-            <p className="text-slate-300 max-w-md">
+            <p className="text-xs text-slate-400 max-w-md">
               Helping Filipino e-commerce businesses ensure compliance with RA No. 11967 
               through AI-powered document analysis.
             </p>
           </div>
 
           {/* Navigation Links */}
-          <div className="mt-12 xl:mt-0">
-            <h3 className="text-sm font-semibold text-slate-400 tracking-wider uppercase">
+          <div className="mt-12 xl:mt-0">            <h3 className="text-xs font-semibold text-slate-400 tracking-wider uppercase">
               Navigation
             </h3>
             <ul className="mt-4 space-y-2">
@@ -47,8 +46,7 @@ export default function Footer() {
           </div>
 
           {/* Legal & Compliance */}
-          <div className="mt-12 xl:mt-0">
-            <h3 className="text-sm font-semibold text-slate-400 tracking-wider uppercase">
+          <div className="mt-12 xl:mt-0">            <h3 className="text-xs font-semibold text-slate-400 tracking-wider uppercase">
               Legal & Compliance
             </h3>
             <ul className="mt-4 space-y-2">
