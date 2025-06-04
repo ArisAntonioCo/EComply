@@ -3,11 +3,8 @@ import { Shield, ArrowUpRight, Github, Twitter, Linkedin, Mail } from "lucide-re
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 border-t border-slate-800/50 relative overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-      
-      <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
+    <footer className="bg-slate-950 border-t border-slate-800/50">      
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-4">            <div className="flex items-center space-x-2 mb-6">

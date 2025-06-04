@@ -8,7 +8,7 @@ export default function FeaturesSection() {
         <div className="text-center max-w-4xl mx-auto mb-20">          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-medium mb-8">
             <Shield className="w-3.5 h-3.5" />
             Comprehensive Compliance Platform
-          </div>          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
+          </div>          <h2 className="text-3xl lg:text-4xl font-bold text-slate-950 mb-6 tracking-tight">
             Complete Tools for 
             <span className="text-blue-600 font-playfair italic"> Compliance</span>
           </h2>          <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-6">
@@ -63,7 +63,7 @@ export default function FeaturesSection() {
             <div className="relative">
               <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Bot className="w-5 h-5 text-white" />
-              </div>              <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">AI-Powered Analysis</h3>              <p className="text-slate-600 leading-relaxed text-sm">
+              </div>              <h3 className="text-lg font-semibold text-slate-950 mb-3 group-hover:text-blue-600 transition-colors">AI-Powered Analysis</h3>              <p className="text-slate-600 leading-relaxed text-sm">
                 Advanced artificial intelligence reviews your Terms of Service and Privacy Policy for compliance gaps with instant insights and recommendations.
               </p>
             </div>
@@ -74,7 +74,7 @@ export default function FeaturesSection() {
               <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <BarChart3 className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">Detailed Reports</h3>
+              <h3 className="text-lg font-semibold text-slate-950 mb-3 group-hover:text-emerald-600 transition-colors">Detailed Reports</h3>
               <p className="text-slate-600 leading-relaxed text-sm">
                 Comprehensive compliance reports with specific recommendations and actionable improvements tailored to your business needs.
               </p>
@@ -87,7 +87,7 @@ export default function FeaturesSection() {
             <div className="relative">
               <div className="w-10 h-10 bg-violet-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <MapPin className="w-5 h-5 text-white" />
-              </div>              <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-violet-600 transition-colors">Philippine Law Focus</h3>
+              </div>              <h3 className="text-lg font-semibold text-slate-950 mb-3 group-hover:text-violet-600 transition-colors">Philippine Law Focus</h3>
               <p className="text-slate-600 leading-relaxed text-sm">
                 Specifically designed for RA No. 11967 and Philippine e-commerce regulations with deep local expertise and legal knowledge.
               </p>
@@ -98,7 +98,7 @@ export default function FeaturesSection() {
             <div className="relative">
               <div className="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Shield className="w-5 h-5 text-white" />
-              </div>              <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">Secure & Private</h3>
+              </div>              <h3 className="text-lg font-semibold text-slate-950 mb-3 group-hover:text-orange-600 transition-colors">Secure & Private</h3>
               <p className="text-slate-600 leading-relaxed text-sm">
                 Your documents are processed securely and never stored. Complete privacy protection with enterprise-grade security standards.
               </p>
@@ -109,7 +109,7 @@ export default function FeaturesSection() {
             <div className="relative">
               <div className="w-10 h-10 bg-cyan-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Zap className="w-5 h-5 text-white" />
-              </div>              <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-cyan-600 transition-colors">Lightning Fast</h3>              <p className="text-slate-600 leading-relaxed text-sm">
+              </div>              <h3 className="text-lg font-semibold text-slate-950 mb-3 group-hover:text-cyan-600 transition-colors">Lightning Fast</h3>              <p className="text-slate-600 leading-relaxed text-sm">
                 Receive your compliance analysis in seconds, not days. Quick turnaround for busy business owners who need immediate results.
               </p>
             </div>

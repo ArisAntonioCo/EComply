@@ -4,7 +4,7 @@ import { ClipboardCheck, CheckCircle, Zap } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="py-20 bg-slate-900 text-white">
+    <section className="py-20 bg-slate-950 text-white">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">        {/* Badge */}        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800 border border-slate-600 text-slate-300 text-sm font-medium mb-6">
           <ClipboardCheck className="w-3.5 h-3.5" />
           Start Your Compliance Journey

@@ -53,14 +53,8 @@ export default function ContactForm() {
     }
   };  if (isSubmitted) {
     return (
-      <section id="contact" className="py-24 sm:py-32 bg-slate-900 relative overflow-hidden">
-        {/* Static radial highlights */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-green-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-blue-500/8 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-emerald-500/6 rounded-full blur-2xl"></div>
-        </div>
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <section id="contact" className="py-24 sm:py-32 bg-slate-950">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
             <Card className="border-green-500/20 bg-gradient-to-br from-green-950/50 to-slate-800 text-white shadow-2xl shadow-green-500/10">
               <CardContent className="pt-8 pb-8">
@@ -104,14 +98,8 @@ export default function ContactForm() {
       </section>
     );
   }  return (
-    <section id="contact" className="py-24 sm:py-32 bg-slate-900 relative overflow-hidden">
-      {/* Static radial highlights */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-indigo-500/8 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-cyan-500/6 rounded-full blur-2xl"></div>
-      </div>
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">        <div className="mx-auto max-w-2xl text-center">          {/* Badge */}
+    <section id="contact" className="py-24 sm:py-32 bg-slate-950">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8"><div className="mx-auto max-w-2xl text-center">          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-600 bg-slate-800 text-slate-300 text-xs font-medium mb-6">
             <Mail className="w-3 h-3" />
             Get in Touch

@@ -8,7 +8,7 @@ export default function HeroSection() {  return (
       {/* Sherlock-inspired Background */}
       <div className="absolute inset-0 z-0">
         {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-slate-950"></div>
         
         {/* Animated gradient orbs */}
         <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>

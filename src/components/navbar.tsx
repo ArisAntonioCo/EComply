@@ -33,11 +33,11 @@ export default function Navbar() {
   const handleSignOut = async () => {
     await supabase.auth.signOut();
     setUser(null);
-    setMobileMenuOpen(false);
+  setMobileMenuOpen(false);
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-slate-900 backdrop-blur-md border-b border-slate-700/50 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-slate-950 backdrop-blur-md border-b border-slate-700/50 shadow-sm">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo and Navigation */}
@@ -139,15 +139,14 @@ export default function Navbar() {
               )}
             </Button>
           </div>
-        </div>
-      </div>
+        </div>        </div>
       
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-900 border-t border-slate-700/50 shadow-lg">
+        <div className="md:hidden bg-slate-950 border-t border-slate-700/50 shadow-lg">
           <div className="px-6 py-4 space-y-3">
             {/* Mobile Navigation Links */}
-            <Link 
+            <Link
               href="/" 
               className="block text-sm text-slate-300 hover:text-blue-300 transition-colors duration-200 font-medium py-2"
               onClick={() => setMobileMenuOpen(false)}
