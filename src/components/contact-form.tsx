@@ -87,7 +87,7 @@ export default function ContactForm() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Contact Us
           </h2>          <p className="mt-6 text-base leading-7 text-slate-300">
-            Have questions about Ecomply or need help with compliance? We&apos;re here to help.
+            Have questions about EComply or need help with compliance? We&apos;re here to help.
           </p>
         </div>
 

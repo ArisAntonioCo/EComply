@@ -114,11 +114,10 @@ export default function Navbar() {
                   >
                     Sign In
                   </Button>
-                </Link>
-                <Link href="/auth" className="hidden md:block">
+                </Link>                <Link href="/auth" className="hidden md:block">
                   <Button 
                     size="sm"
-                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-medium text-xs"
+                    className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-medium text-xs"
                   >
                     Get Started
                   </Button>
@@ -207,11 +206,10 @@ export default function Navbar() {
                     >
                       Sign In
                     </Button>
-                  </Link>
-                  <Link href="/auth" className="block" onClick={() => setMobileMenuOpen(false)}>
+                  </Link>                  <Link href="/auth" className="block" onClick={() => setMobileMenuOpen(false)}>
                     <Button 
                       size="sm"
-                      className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-200 font-medium text-xs"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-200 font-medium text-xs"
                     >
                       Get Started
                     </Button>
