@@ -6,9 +6,6 @@ import { supabase } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
-import type { User } from '@supabase/supabase-js'
 
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true)
@@ -16,27 +13,19 @@ export default function AuthPage() {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
-  const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
     // Check if user is already authenticated
-    const getUser = async () => {
+    const checkAuth = async () => {
       const { data: { user } } = await supabase.auth.getUser()
       if (user) {
-        setUser(user)
         // Redirect to dashboard if already logged in
         window.location.href = '/dashboard'
       }
     }
     
-    getUser()
+    checkAuth()
   }, [])
-
-  const handleSignOut = async () => {
-    await supabase.auth.signOut()
-    setUser(null)
-    window.location.href = '/'
-  }
 
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -68,10 +57,8 @@ export default function AuthPage() {
       setLoading(false)
     }
   }
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <Navbar user={user} onSignOut={handleSignOut} />
       <div className="flex items-center justify-center px-6 pt-16 pb-8">
         <div className="w-full max-w-md">
         <div className="text-center mb-8">
@@ -140,11 +127,9 @@ export default function AuthPage() {
               >
                 {isLogin ? "Don't have an account? Sign up" : 'Already have an account? Sign in'}
               </button>            </div>
-          </CardContent>
-        </Card>
+          </CardContent>        </Card>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

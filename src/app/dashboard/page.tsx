@@ -2,32 +2,25 @@
 
 import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
 import DocumentAnalysisWorkflow from '@/components/document-analysis-workflow'
-import type { User } from '@supabase/supabase-js'
 
 export default function Dashboard() {
-  const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
 
   useEffect(() => {
     // Check if user is authenticated
-    const getUser = async () => {
+    const checkAuth = async () => {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) {
         window.location.href = '/auth'
         return
       }
-      setUser(user)
+      setIsAuthenticated(true)
     }
     
-    getUser()
+    checkAuth()
   }, [])
-  const handleSignOut = async () => {
-    await supabase.auth.signOut()
-    window.location.href = '/'
-  }
 
   const handleRestartAnalysis = () => {
     // Reset any state if needed
@@ -66,8 +59,7 @@ export default function Dashboard() {
       setLoading(false)
     }
   }
-
-  if (!user) {
+  if (isAuthenticated === null) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
         <div className="text-center">
@@ -76,9 +68,8 @@ export default function Dashboard() {
         </div>
       </div>
     )
-  }  return (
+  }return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <Navbar user={user} onSignOut={handleSignOut} />
         <div className="max-w-4xl mx-auto px-6 py-8">
         <DocumentAnalysisWorkflow 
           onAnalyze={handleAnalyze} 
@@ -86,8 +77,6 @@ export default function Dashboard() {
           onRestartAnalysis={handleRestartAnalysis}
         />
       </div>
-      
-      <Footer />
     </div>
   )
 }
