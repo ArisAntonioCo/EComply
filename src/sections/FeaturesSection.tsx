@@ -55,75 +55,107 @@ export default function FeaturesSection() {
               </div>
             </div>
           </div>
-        </div>        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Feature 1 */}
-          <div className="group relative p-8 bg-white rounded-2xl border border-slate-200 hover:border-blue-300 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1">
-            <div className="absolute inset-0 rounded-2xl bg-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative">
-              <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Bot className="w-5 h-5 text-white" />
-              </div>              <h3 className="text-lg font-semibold text-slate-950 mb-3 group-hover:text-blue-600 transition-colors">AI-Powered Analysis</h3>              <p className="text-slate-600 leading-relaxed text-sm">
-                Advanced artificial intelligence reviews your Terms of Service and Privacy Policy for compliance gaps with instant insights and recommendations.
-              </p>
-            </div>
-          </div>          {/* Feature 2 */}
-          <div className="group relative p-8 bg-white rounded-2xl border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1">
-            <div className="absolute inset-0 rounded-2xl bg-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative">
-              <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <BarChart3 className="w-5 h-5 text-white" />
+        </div>        {/* Features Grid with Gray Lines and Plus Icons */}
+        <div className="relative max-w-6xl mx-auto">
+          {/* Grid Background with Lines */}
+          <div className="absolute inset-0 grid grid-cols-3 grid-rows-2">
+            {/* Vertical Lines */}
+            <div className="border-r border-slate-200"></div>
+            <div className="border-r border-slate-200"></div>
+            <div></div>
+            <div className="border-r border-slate-200 border-t border-slate-200"></div>
+            <div className="border-r border-slate-200 border-t border-slate-200"></div>
+            <div className="border-t border-slate-200"></div>
+          </div>
+
+          {/* Plus Icons at Grid Intersections - Only Middle Two */}
+          <div className="absolute inset-0 pointer-events-none">            
+            {/* Middle row intersections */}
+            <div className="absolute top-1/2 left-1/3 w-4 h-4 -translate-x-1/2 -translate-y-1/2 bg-white border border-slate-200 rounded-full flex items-center justify-center">
+              <div className="w-2 h-2 text-slate-400">
+                <svg viewBox="0 0 12 12" fill="currentColor">
+                  <path d="M6 2v8M2 6h8" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                </svg>
               </div>
-              <h3 className="text-lg font-semibold text-slate-950 mb-3 group-hover:text-emerald-600 transition-colors">Detailed Reports</h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
-                Comprehensive compliance reports with specific recommendations and actionable improvements tailored to your business needs.
-              </p>
+            </div>
+            <div className="absolute top-1/2 left-2/3 w-4 h-4 -translate-x-1/2 -translate-y-1/2 bg-white border border-slate-200 rounded-full flex items-center justify-center">
+              <div className="w-2 h-2 text-slate-400">
+                <svg viewBox="0 0 12 12" fill="currentColor">
+                  <path d="M6 2v8M2 6h8" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                </svg>
+              </div>
             </div>
           </div>
 
-          {/* Feature 3 */}
-          <div className="group relative p-8 bg-white rounded-2xl border border-slate-200 hover:border-violet-300 transition-all duration-300 hover:shadow-xl hover:shadow-violet-500/10 hover:-translate-y-1">
-            <div className="absolute inset-0 rounded-2xl bg-violet-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative">
-              <div className="w-10 h-10 bg-violet-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <MapPin className="w-5 h-5 text-white" />
-              </div>              <h3 className="text-lg font-semibold text-slate-950 mb-3 group-hover:text-violet-600 transition-colors">Philippine Law Focus</h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
-                Specifically designed for RA No. 11967 and Philippine e-commerce regulations with deep local expertise and legal knowledge.
+          {/* Features Content */}
+          <div className="relative grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-0">
+            {/* Feature 1 */}
+            <div className="p-8 text-left">
+              <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-4">
+                <Bot className="w-5 h-5 text-blue-600" />
+              </div>
+              <h3 className="text-base font-medium text-slate-900 mb-2">AI personalization</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Advanced AI analyzes your documents for compliance gaps
               </p>
             </div>
-          </div>          {/* Feature 4 */}
-          <div className="group relative p-8 bg-white rounded-2xl border border-slate-200 hover:border-orange-300 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1">
-            <div className="absolute inset-0 rounded-2xl bg-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative">
-              <div className="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Shield className="w-5 h-5 text-white" />
-              </div>              <h3 className="text-lg font-semibold text-slate-950 mb-3 group-hover:text-orange-600 transition-colors">Secure & Private</h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
-                Your documents are processed securely and never stored. Complete privacy protection with enterprise-grade security standards.
+
+            {/* Feature 2 */}
+            <div className="p-8 text-left">
+              <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-4">
+                <BarChart3 className="w-5 h-5 text-blue-600" />
+              </div>
+              <h3 className="text-base font-medium text-slate-900 mb-2">Detailed reports</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Comprehensive analysis with actionable recommendations
               </p>
             </div>
-          </div>          {/* Feature 5 */}
-          <div className="group relative p-8 bg-white rounded-2xl border border-slate-200 hover:border-cyan-300 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-1">
-            <div className="absolute inset-0 rounded-2xl bg-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative">
-              <div className="w-10 h-10 bg-cyan-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Zap className="w-5 h-5 text-white" />
-              </div>              <h3 className="text-lg font-semibold text-slate-950 mb-3 group-hover:text-cyan-600 transition-colors">Lightning Fast</h3>              <p className="text-slate-600 leading-relaxed text-sm">
-                Receive your compliance analysis in seconds, not days. Quick turnaround for busy business owners who need immediate results.
+
+            {/* Feature 3 */}
+            <div className="p-8 text-left">
+              <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-4">
+                <MapPin className="w-5 h-5 text-blue-600" />
+              </div>
+              <h3 className="text-base font-medium text-slate-900 mb-2">Philippine law focus</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Specifically designed for RA No. 11967 compliance
               </p>
             </div>
-          </div>          {/* Feature 6 */}
-          <div className="group relative p-8 bg-white rounded-2xl border border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10 hover:-translate-y-1">
-            <div className="absolute inset-0 rounded-2xl bg-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative">
-              <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Users className="w-5 h-5 text-white" />
-              </div>              <h3 className="text-lg font-semibold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">Expert Support</h3>              <p className="text-slate-600 leading-relaxed text-sm">
-                Access help from compliance experts who understand Philippine e-commerce law and regulations with deep industry knowledge.
+
+            {/* Feature 4 */}
+            <div className="p-8 text-left">
+              <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-4">
+                <Shield className="w-5 h-5 text-blue-600" />
+              </div>
+              <h3 className="text-base font-medium text-slate-900 mb-2">Secure & private</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Enterprise-grade security with complete privacy protection
               </p>
             </div>
-          </div>        </div>
+
+            {/* Feature 5 */}
+            <div className="p-8 text-left">
+              <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-4">
+                <Zap className="w-5 h-5 text-blue-600" />
+              </div>
+              <h3 className="text-base font-medium text-slate-900 mb-2">Lightning fast</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Get compliance analysis results in seconds, not days
+              </p>
+            </div>
+
+            {/* Feature 6 */}
+            <div className="p-8 text-left">
+              <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-4">
+                <Users className="w-5 h-5 text-blue-600" />
+              </div>
+              <h3 className="text-base font-medium text-slate-900 mb-2">Expert support</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Access help from Philippine e-commerce compliance experts
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

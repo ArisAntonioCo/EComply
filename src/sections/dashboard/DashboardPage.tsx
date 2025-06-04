@@ -65,13 +65,9 @@ export default function DashboardPage() {
   if (isAuthenticated === null) {
     return <DashboardLoadingSection />;
   }
-
   return (
-    <div className="min-h-screen bg-slate-950 relative overflow-hidden">
-      {/* Technical Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
-      
-      <div className="relative max-w-5xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-950">
+      <div className="max-w-5xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
         <DashboardHeaderSection />
         <DashboardContentSection 
           onAnalyze={handleAnalyze} 

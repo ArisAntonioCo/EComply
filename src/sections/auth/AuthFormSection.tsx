@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
 import { ClipboardCheck, Eye, EyeOff, CheckCircle, AlertCircle } from 'lucide-react'
 import InfiniteScroll from '@/components/infinite-scroll'
+import RadialGlow from '@/components/radial-glow'
 
 export default function AuthFormSection() {
   const [isLogin, setIsLogin] = useState(true)
@@ -111,10 +112,10 @@ export default function AuthFormSection() {
       setLoading(false)
     }
   }
-
-  return (
-    <section className="py-24 sm:py-32 bg-slate-950 min-h-screen flex items-center">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 w-full">
+  return (    <section className="py-24 sm:py-32 bg-slate-950 min-h-screen flex items-center relative overflow-hidden">      {/* Radial glow effect component */}
+      <RadialGlow />
+      
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 w-full relative z-10">
         <div className="mx-auto max-w-md">
 
           {/* Form Header */}
@@ -265,8 +266,7 @@ export default function AuthFormSection() {
                 )}
               </form>
 
-              {/* Toggle Between Login/Signup */}
-              <div className="mt-8 pt-6 border-t border-slate-700 text-center">
+              {/* Toggle Between Login/Signup */}              <div className="mt-8 pt-6 border-t border-slate-700 text-center">
                 <p className="text-slate-400 mb-3 text-sm">
                   {isLogin ? "Don't have an account?" : 'Already have an account?'}
                 </p>
@@ -278,7 +278,7 @@ export default function AuthFormSection() {
                     setEmailError('')
                     setPasswordError('')
                   }}
-                  className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
+                  className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200 cursor-pointer text-xs"
                 >
                   {isLogin ? 'Create new account' : 'Sign in to existing account'}
                 </button>
