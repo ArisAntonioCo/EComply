@@ -74,10 +74,9 @@ export default function ContactForm() {
                   <h3 className="text-2xl font-bold text-green-400 mb-3">
                     Message Sent Successfully!
                   </h3>
-                  
-                  {/* Success Description */}
+                    {/* Success Description */}
                   <p className="text-lg text-slate-300 mb-4 leading-relaxed">
-                    Thank you for contacting us! Your message has been sent and we'll get back to you soon.
+                    Thank you for contacting us! Your message has been sent and we&apos;ll get back to you soon.
                   </p>
                   
                   {/* Additional Info */}
