@@ -93,13 +93,12 @@ export default function AuthFormSection() {
         // Redirect to dashboard
         setTimeout(() => {
           window.location.href = '/dashboard'
-        }, 1000)
-      } else {
+        }, 1000)      } else {
         const { error } = await supabase.auth.signUp({
           email,
           password,
           options: {
-            emailRedirectTo: `${window.location.origin}/dashboard`
+            emailRedirectTo: 'https://e-comply.vercel.app/dashboard'
           }
         })
         if (error) throw error
