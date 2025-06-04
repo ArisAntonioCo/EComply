@@ -68,9 +68,20 @@ export default function Dashboard() {
         </div>
       </div>
     )
-  }return (
+  }  return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="max-w-4xl mx-auto px-6 py-8">
+      <div className="max-w-5xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+        {/* Dashboard Header */}
+        <div className="mb-8">
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+            RA No. 11967 Compliance Dashboard
+          </h1>
+          <p className="text-gray-600">
+            Analyze your Terms of Service and Privacy Policy for compliance with Philippine data protection laws
+          </p>
+        </div>
+
+        {/* Main Content */}
         <DocumentAnalysisWorkflow 
           onAnalyze={handleAnalyze} 
           loading={loading} 
