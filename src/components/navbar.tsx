@@ -33,78 +33,73 @@ export default function Navbar() {
     await supabase.auth.signOut();
     setUser(null);
     setMobileMenuOpen(false);
-  };return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/80 border-b border-slate-200/50 shadow-sm">
+  };  return (
+    <nav className="sticky top-0 z-50 bg-slate-900 backdrop-blur-md border-b border-slate-700/50 shadow-sm">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="relative">
-                <ClipboardCheck className="w-8 h-8 text-blue-600 group-hover:text-blue-700 transition-colors duration-200" />
-                <div className="absolute -inset-1 bg-blue-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 blur-sm"></div>
+            <Link href="/" className="flex items-center space-x-3 group">              <div className="relative">
+                <ClipboardCheck className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors duration-200" />
+                <div className="absolute -inset-1 bg-blue-400/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 blur-sm"></div>
               </div>
-              <span className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-200">
+              <span className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors duration-200">
                 Ecomply
               </span>
             </Link>
           </div>
 
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-1">
+          {/* Navigation Links */}          <div className="hidden md:flex items-center space-x-1">
             <Link 
               href="/" 
-              className="px-4 py-2 rounded-lg text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 font-medium"
+              className="px-4 py-2 rounded-lg text-slate-300 hover:text-blue-300 hover:bg-slate-800 transition-all duration-200 font-medium"
             >
               Home
             </Link>
             <Link 
               href="/dashboard" 
-              className="px-4 py-2 rounded-lg text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 font-medium"
+              className="px-4 py-2 rounded-lg text-slate-300 hover:text-blue-300 hover:bg-slate-800 transition-all duration-200 font-medium"
             >
               Dashboard
             </Link>
             <Link 
               href="/#features" 
-              className="px-4 py-2 rounded-lg text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 font-medium"
+              className="px-4 py-2 rounded-lg text-slate-300 hover:text-blue-300 hover:bg-slate-800 transition-all duration-200 font-medium"
             >
               Features
             </Link>
             <Link 
               href="/#contact" 
-              className="px-4 py-2 rounded-lg text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 font-medium"
+              className="px-4 py-2 rounded-lg text-slate-300 hover:text-blue-300 hover:bg-slate-800 transition-all duration-200 font-medium"
             >
               Contact
             </Link>
-          </div>          {/* Auth Buttons or User Info */}
+          </div>{/* Auth Buttons or User Info */}
           <div className="flex items-center space-x-3">
             {user ? (
               // Authenticated state
-              <>
-                <div className="hidden md:flex items-center space-x-3">
-                  <div className="flex items-center space-x-2 px-3 py-1.5 bg-green-50 border border-green-200 rounded-lg">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-sm text-green-700 font-medium">
+              <>                <div className="hidden md:flex items-center space-x-3">
+                  <div className="flex items-center space-x-2 px-3 py-1.5 bg-green-900/50 border border-green-600 rounded-lg">
+                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <span className="text-sm text-green-200 font-medium">
                       {user.email?.split('@')[0]}
                     </span>
                   </div>
-                </div>
-                <Button 
+                </div>                <Button 
                   variant="outline" 
                   onClick={handleSignOut} 
                   size="sm"
-                  className="hidden md:flex border-slate-300 text-slate-600 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-400 transition-all duration-200"
+                  className="hidden md:flex border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white hover:border-slate-600 transition-all duration-200"
                 >
                   Sign Out
                 </Button>
               </>
             ) : (
               // Unauthenticated state
-              <>
-                <Link href="/auth" className="hidden md:block">
+              <>                <Link href="/auth" className="hidden md:block">
                   <Button 
                     variant="ghost" 
-                    className="text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 font-medium"
+                    className="text-slate-300 hover:text-blue-300 hover:bg-slate-800 transition-all duration-200 font-medium"
                   >
                     Sign In
                   </Button>
@@ -117,11 +112,10 @@ export default function Navbar() {
               </>
             )}
             
-            {/* Mobile menu toggle */}
-            <Button
+            {/* Mobile menu toggle */}            <Button
               variant="ghost"
               size="sm"
-              className="md:hidden p-2 text-gray-600 hover:text-blue-700 hover:bg-blue-50"
+              className="md:hidden p-2 text-slate-300 hover:text-blue-300 hover:bg-slate-800"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? (
@@ -132,56 +126,53 @@ export default function Navbar() {
             </Button>
           </div>        </div>
       </div>
-      
-      {/* Mobile Navigation Menu */}
+        {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-slate-200/50 shadow-lg">
+        <div className="md:hidden bg-slate-900 border-t border-slate-700/50 shadow-lg">
           <div className="px-6 py-4 space-y-3">
             {/* Mobile Navigation Links */}
             <Link 
               href="/" 
-              className="block px-4 py-2 rounded-lg text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 font-medium"
+              className="block px-4 py-2 rounded-lg text-slate-300 hover:text-blue-300 hover:bg-slate-800 transition-all duration-200 font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link 
               href="/dashboard" 
-              className="block px-4 py-2 rounded-lg text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 font-medium"
+              className="block px-4 py-2 rounded-lg text-slate-300 hover:text-blue-300 hover:bg-slate-800 transition-all duration-200 font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Dashboard
             </Link>
             <Link 
               href="/#features" 
-              className="block px-4 py-2 rounded-lg text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 font-medium"
+              className="block px-4 py-2 rounded-lg text-slate-300 hover:text-blue-300 hover:bg-slate-800 transition-all duration-200 font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Features
             </Link>
             <Link 
               href="/#contact" 
-              className="block px-4 py-2 rounded-lg text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 font-medium"
+              className="block px-4 py-2 rounded-lg text-slate-300 hover:text-blue-300 hover:bg-slate-800 transition-all duration-200 font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
             </Link>
             
-            <div className="pt-3 border-t border-slate-200">
-              {user ? (
+            <div className="pt-3 border-t border-slate-700">              {user ? (
                 // Authenticated mobile state
                 <>
-                  <div className="flex items-center space-x-2 px-4 py-2 mb-3 bg-green-50 border border-green-200 rounded-lg">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-sm text-green-700 font-medium">
+                  <div className="flex items-center space-x-2 px-4 py-2 mb-3 bg-green-900/50 border border-green-600 rounded-lg">
+                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <span className="text-sm text-green-200 font-medium">
                       {user.email?.split('@')[0]}
                     </span>
-                  </div>
-                  <Button 
+                  </div>                  <Button 
                     variant="outline" 
                     onClick={handleSignOut} 
                     size="sm"
-                    className="w-full border-slate-300 text-slate-600 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-400 transition-all duration-200"
+                    className="w-full border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white hover:border-slate-600 transition-all duration-200"
                   >
                     Sign Out
                   </Button>
@@ -192,7 +183,7 @@ export default function Navbar() {
                   <Link href="/auth" className="block" onClick={() => setMobileMenuOpen(false)}>
                     <Button 
                       variant="ghost" 
-                      className="w-full text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 font-medium"
+                      className="w-full text-slate-300 hover:text-blue-300 hover:bg-slate-800 transition-all duration-200 font-medium"
                     >
                       Sign In
                     </Button>

@@ -6,7 +6,7 @@ import { supabase } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
-import { ClipboardCheck, Shield, Users, TrendingUp, Eye, EyeOff, CheckCircle, AlertCircle } from 'lucide-react'
+import { ClipboardCheck, Shield, Users, TrendingUp, Eye, EyeOff, CheckCircle, AlertCircle, Terminal, Code, Database } from 'lucide-react'
 
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true)
@@ -109,114 +109,109 @@ export default function AuthPage() {
       setLoading(false)
     }
   }
-
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      {/* Left Side - Branding & Visual */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-indigo-600/10"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,.02)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]"></div>
+    <div className="min-h-screen bg-slate-900 flex">      {/* Left Side - Business Branding */}
+      <div className="hidden lg:flex lg:w-1/2 bg-slate-800 relative overflow-hidden">
+        {/* Technical Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
         
         <div className="relative z-10 flex flex-col justify-center px-12 text-white">
           {/* Logo */}
           <div className="flex items-center mb-12">
-            <ClipboardCheck className="w-10 h-10 text-blue-400 mr-3" />
+            <Shield className="w-10 h-10 text-blue-400 mr-3" />
             <span className="text-3xl font-bold">Ecomply</span>
           </div>
 
           {/* Headline */}
           <h1 className="text-4xl font-bold mb-6 leading-tight">
-            Ensure Your E-Commerce 
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
-              Legal Compliance
+            E-Commerce Legal 
+            <span className="block text-blue-400">
+              Compliance Made Simple
             </span>
           </h1>
 
-          <p className="text-xl text-blue-100 mb-12 leading-relaxed">
-            AI-powered analysis for Philippine E-Commerce Law RA No. 11967 compliance. 
-            Join thousands of businesses ensuring legal compliance.
+          <p className="text-xl text-slate-300 mb-12 leading-relaxed">
+            Ensure your e-commerce business complies with Philippine E-Commerce Law RA No. 11967.
           </p>
 
-          {/* Trust Indicators */}
+          {/* Features */}
           <div className="space-y-6">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
-                <Shield className="w-6 h-6 text-blue-400" />
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                <Shield className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Secure & Compliant</h3>
-                <p className="text-blue-200">Enterprise-grade security with data protection</p>
+                <h3 className="font-semibold text-lg">Secure & Private</h3>
+                <p className="text-slate-400 text-sm">Your documents are processed securely</p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-4">              <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                <Users className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg">Trusted by Businesses</h3>
+                <p className="text-slate-400 text-sm">Join hundreds of Filipino e-commerce stores</p>
               </div>
             </div>
 
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
-                <Users className="w-6 h-6 text-green-400" />
+              <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
+                <TrendingUp className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Trusted by 1000+ Businesses</h3>
-                <p className="text-blue-200">Filipino e-commerce leaders choose Ecomply</p>
+                <h3 className="font-semibold text-lg">Fast Results</h3>
+                <p className="text-slate-400 text-sm">Get compliance analysis in seconds</p>
               </div>
             </div>
+          </div>
 
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center">
-                <TrendingUp className="w-6 h-6 text-indigo-400" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg">99% Accuracy Rate</h3>
-                <p className="text-blue-200">AI-powered compliance analysis you can trust</p>
-              </div>
-            </div>
-          </div>          {/* Testimonial */}
-          <div className="mt-12 p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
-            <p className="text-blue-100 italic mb-3">
-              &ldquo;Ecomply saved us countless hours of legal review. The AI analysis is incredibly accurate and actionable.&rdquo;
+          {/* Testimonial */}
+          <div className="mt-12 p-6 bg-slate-700 rounded-lg border border-slate-600">
+            <p className="text-slate-300 text-sm mb-3">
+              &ldquo;Ecomply helped us understand our compliance requirements quickly. Great for small businesses!&rdquo;
             </p>
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full flex items-center justify-center">
-                <span className="text-white font-semibold text-sm">MR</span>
+              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">MR</span>
               </div>
               <div>
                 <p className="font-semibold text-sm">Maria Rodriguez</p>
-                <p className="text-blue-200 text-xs">CEO, TechStore Philippines</p>
+                <p className="text-slate-400 text-xs">Owner, TechStore Philippines</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Right Side - Authentication Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center px-6 py-12">
-        <div className="w-full max-w-md">
-          {/* Mobile Logo */}
+      </div>      {/* Right Side - Authentication Interface */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center px-6 py-12 bg-slate-900">
+        <div className="w-full max-w-md">          {/* Mobile Logo */}
           <div className="lg:hidden text-center mb-8">
             <Link href="/" className="flex items-center justify-center space-x-3">
-              <ClipboardCheck className="w-8 h-8 text-blue-600" />
-              <span className="text-2xl font-bold text-gray-900">Ecomply</span>
+              <Shield className="w-8 h-8 text-blue-400" />
+              <span className="text-2xl font-bold text-white">Ecomply</span>
             </Link>
           </div>
 
           {/* Form Header */}
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              {isLogin ? 'Welcome back' : 'Create your account'}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium mb-4">
+              <ClipboardCheck className="w-4 h-4" />
+              {isLogin ? 'Welcome Back' : 'Get Started'}
+            </div>            <h2 className="text-3xl font-bold text-white mb-2">
+              {isLogin ? 'Sign In' : 'Create Account'}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-slate-400">
               {isLogin 
-                ? 'Sign in to access your compliance dashboard' 
-                : 'Start your compliance journey today'
+                ? 'Access your compliance dashboard' 
+                : 'Start your compliance analysis journey'
               }
             </p>
           </div>
 
-          <Card className="shadow-xl border-0">
-            <CardContent className="p-8">
-              <form onSubmit={handleAuth} className="space-y-6">
+          <Card className="bg-slate-800 border-slate-700">
+            <CardContent className="p-8">              <form onSubmit={handleAuth} className="space-y-6">
                 {/* Email Field */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <div>                  <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
                     Email Address
                   </label>
                   <div className="relative">
@@ -228,8 +223,8 @@ export default function AuthPage() {
                         setEmail(e.target.value)
                         validateEmail(e.target.value)
                       }}
-                      className={`pl-4 pr-4 py-3 text-base ${emailError ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'}`}
-                      placeholder="Enter your email"
+                      className={`pl-4 pr-4 py-3 text-base bg-slate-700 border-slate-600 text-white placeholder:text-slate-400 ${emailError ? 'border-red-500 focus:ring-red-500' : 'focus:ring-blue-500 focus:border-blue-500'}`}
+                      placeholder="your@email.com"
                       required
                     />
                     {emailError && (
@@ -238,8 +233,7 @@ export default function AuthPage() {
                       </div>
                     )}
                   </div>
-                  {emailError && (
-                    <p className="mt-2 text-sm text-red-600 flex items-center">
+                  {emailError && (                    <p className="mt-2 text-sm text-red-400 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
                       {emailError}
                     </p>
@@ -247,8 +241,7 @@ export default function AuthPage() {
                 </div>
 
                 {/* Password Field */}
-                <div>
-                  <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                <div>                  <label htmlFor="password" className="block text-sm font-medium text-slate-300 mb-2">
                     Password
                   </label>
                   <div className="relative">
@@ -260,32 +253,28 @@ export default function AuthPage() {
                         setPassword(e.target.value)
                         validatePassword(e.target.value)
                       }}
-                      className={`pl-4 pr-12 py-3 text-base ${passwordError ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'}`}
-                      placeholder="Enter your password"
+                      className={`pl-4 pr-12 py-3 text-base bg-slate-700 border-slate-600 text-white placeholder:text-slate-400 ${passwordError ? 'border-red-500 focus:ring-red-500' : 'focus:ring-blue-500 focus:border-blue-500'}`}
+                      placeholder="••••••••••••"
                       required
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-200"
                     >
                       {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                     </button>
                   </div>
-                  
-                  {passwordError && (
-                    <p className="mt-2 text-sm text-red-600 flex items-center">
+                    {passwordError && (
+                    <p className="mt-2 text-sm text-red-400 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
                       {passwordError}
                     </p>
-                  )}
-
-                  {/* Password Strength Indicator (only for signup) */}
+                  )}{/* Password Strength Indicator (only for signup) */}
                   {!isLogin && password && (
-                    <div className="mt-3">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm text-gray-600">Password strength:</span>
-                        <span className={`text-sm font-medium ${passwordStrength >= 3 ? 'text-green-600' : passwordStrength >= 2 ? 'text-yellow-600' : 'text-red-600'}`}>
+                    <div className="mt-3">                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm text-slate-400">Password strength:</span>
+                        <span className={`text-sm font-medium ${passwordStrength >= 3 ? 'text-green-400' : passwordStrength >= 2 ? 'text-yellow-400' : 'text-red-400'}`}>
                           {strengthLabels[passwordStrength - 1] || 'Very Weak'}
                         </span>
                       </div>
@@ -293,10 +282,10 @@ export default function AuthPage() {
                         {[1, 2, 3, 4, 5].map((level) => (
                           <div
                             key={level}
-                            className={`h-2 rounded-full ${
+                            className={`h-2 rounded ${
                               level <= passwordStrength 
-                                ? strengthColors[passwordStrength - 1] || 'bg-gray-200'
-                                : 'bg-gray-200'
+                                ? strengthColors[passwordStrength - 1] || 'bg-slate-600'
+                                : 'bg-slate-600'
                             }`}
                           />
                         ))}
@@ -305,10 +294,9 @@ export default function AuthPage() {
                   )}
                 </div>
 
-                {/* Submit Button */}
-                <Button 
+                {/* Submit Button */}                <Button 
                   type="submit" 
-                  className="w-full py-3 text-base font-medium bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5" 
+                  className="w-full py-3 text-base font-medium bg-blue-600 hover:bg-blue-700 text-white" 
                   disabled={loading || !!emailError || !!passwordError}
                 >
                   {loading ? (
@@ -318,34 +306,32 @@ export default function AuthPage() {
                     </div>
                   ) : (
                     <div className="flex items-center justify-center space-x-2">
+                      <ClipboardCheck className="w-4 h-4" />
                       <span>{isLogin ? 'Sign In' : 'Create Account'}</span>
-                      <CheckCircle className="w-4 h-4" />
                     </div>
                   )}
                 </Button>
 
-                {/* Message Display */}
-                {message && (
-                  <div className={`p-4 rounded-lg ${
+                {/* Message Display */}                {message && (
+                  <div className={`p-4 rounded-lg border text-sm ${
                     message.includes('Error') 
-                      ? 'bg-red-50 border border-red-200 text-red-700' 
-                      : 'bg-green-50 border border-green-200 text-green-700'
+                      ? 'bg-red-900/50 border-red-600 text-red-300' 
+                      : 'bg-green-900/50 border-green-600 text-green-300'
                   }`}>
                     <div className="flex items-start space-x-2">
                       {message.includes('Error') ? (
-                        <AlertCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                        <AlertCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
                       ) : (
-                        <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
                       )}
-                      <p className="text-sm">{message}</p>
+                      <p>{message}</p>
                     </div>
                   </div>
                 )}
               </form>
 
-              {/* Toggle Between Login/Signup */}
-              <div className="mt-8 pt-6 border-t border-gray-200 text-center">
-                <p className="text-gray-600 mb-3">
+              {/* Toggle Between Login/Signup */}              <div className="mt-8 pt-6 border-t border-slate-700 text-center">
+                <p className="text-slate-400 mb-3 text-sm">
                   {isLogin ? "Don't have an account?" : 'Already have an account?'}
                 </p>
                 <button
@@ -356,19 +342,18 @@ export default function AuthPage() {
                     setEmailError('')
                     setPasswordError('')
                   }}
-                  className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+                  className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
                 >
-                  {isLogin ? 'Create a free account' : 'Sign in instead'}
+                  {isLogin ? 'Create new account' : 'Sign in to existing account'}
                 </button>
               </div>
 
-              {/* Back to Home */}
-              <div className="mt-6 text-center">
+              {/* Back to Home */}              <div className="mt-6 text-center">
                 <Link 
                   href="/" 
-                  className="text-sm text-gray-500 hover:text-gray-700 transition-colors duration-200"
+                  className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200"
                 >
-                  ← Back to homepage
+                  ← Back to Home
                 </Link>
               </div>
             </CardContent>

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {  return (
     <html lang="en">
       <body
-        className={`${jetbrainsMono.variable} antialiased font-mono`}
+        className={`${inter.variable} antialiased font-sans`}
       >
         <Navbar />
         {children}

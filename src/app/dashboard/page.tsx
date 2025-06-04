@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
 import DocumentAnalysisWorkflow from '@/components/document-analysis-workflow'
+import { Shield, ClipboardCheck } from 'lucide-react'
 
 export default function Dashboard() {
   const [loading, setLoading] = useState(false)
@@ -54,30 +55,40 @@ export default function Dashboard() {
       return result
     } catch (error) {
       console.error('Analysis error:', error)
-      throw error
-    } finally {
+      throw error    } finally {
       setLoading(false)
     }
   }
+
   if (isAuthenticated === null) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center relative overflow-hidden">
+        {/* Technical Grid Background */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+          <div className="relative text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
+          <p className="mt-4 text-slate-300">Loading dashboard...</p>
         </div>
       </div>
     )
-  }  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="max-w-5xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
-        {/* Dashboard Header */}
+  }
+
+  return (
+    <div className="min-h-screen bg-slate-900 relative overflow-hidden">
+      {/* Technical Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+      
+      <div className="relative max-w-5xl mx-auto px-4 py-6 sm:px-6 lg:px-8">        {/* Dashboard Header */}
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
-            RA No. 11967 Compliance Dashboard
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium mb-4">
+            <ClipboardCheck className="w-4 h-4" />
+            Compliance Dashboard
+          </div>
+          <h1 className="text-2xl font-bold text-white mb-2">
+            RA No. 11967 Compliance Analysis
           </h1>
-          <p className="text-gray-600">
-            Analyze your Terms of Service and Privacy Policy for compliance with Philippine data protection laws
+          <p className="text-slate-300">
+            Analyze your Terms of Service and Privacy Policy documents for Philippine e-commerce compliance
           </p>
         </div>
 

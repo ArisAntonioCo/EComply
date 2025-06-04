@@ -3,8 +3,8 @@
 ## Typography
 
 ### Font Family
-- **Primary Font**: JetBrains Mono
-- **Fallback**: `ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`
+- **Primary Font**: Inter
+- **Fallback**: `ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`
 
 ### Typography Hierarchy
 
@@ -29,7 +29,7 @@
 - **Bold**: `font-bold` (700)
 
 ### Usage Guidelines
-- Use JetBrains Mono for all text to maintain technical credibility
+- Use Inter for all text to maintain technical credibility with modern aesthetics
 - Maintain consistent line heights for readability
 - Use appropriate font weights to establish hierarchy
 - Ensure adequate contrast ratios for accessibility
@@ -80,7 +80,7 @@
 ## Implementation Status
 
 ### ✅ Completed
-- [x] JetBrains Mono font integration
+- [x] Inter font integration
 - [x] Icon library setup (Lucide React)
 - [x] Landing page icon replacement
 - [x] Results dashboard icon replacement

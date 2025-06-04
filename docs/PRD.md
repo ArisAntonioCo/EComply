@@ -12,7 +12,7 @@ Help Filipino e-commerce businesses validate if their customer-facing documents 
 ## Target Users
 - Local e-commerce website operators
 - Online sellers using marketplaces or their own platforms
-- Developers/teams building compliance tools for small businesses
+- Small to medium business owners seeking compliance assistance
 
 ## Core Features
 - **Authentication**: Email/password login (via Supabase)
@@ -88,12 +88,11 @@ Gemini analyzes pasted document content per document type and returns structured
 ## UI Requirements
 ### 1. Landing Page
 - Hero section with compelling headline and subtext about RA No. 11967
-- Modern gradient backgrounds and sophisticated color schemes
+- Clean flat design with modern typography (Inter font)
 - Feature showcase with icon-supported value propositions
 - Social proof and credibility indicators
 - Engaging CTAs with clear user journey guidance
-- Interactive elements and subtle animations
-- Professional layout inspired by top-tier SaaS products (Supabase, Vercel style)
+- Professional layout with business-focused messaging
 - Responsive design that looks exceptional on all devices
 
 ### 2. Dashboard (Post Login)
@@ -150,8 +149,8 @@ Gemini analyzes pasted document content per document type and returns structured
 
 ## Tech Stack
 - **Frontend**: Next.js (with TypeScript), TailwindCSS, shadcn/ui
-- **Typography**: JetBrains Mono font for enhanced readability and modern aesthetic
-- **Icons**: Heroicons for consistent, minimalist iconography
+- **Typography**: Inter font family for technical credibility and modern aesthetics (Supabase-style)
+- **Icons**: Lucide React for consistent, minimalist iconography
 - **Auth**: Supabase (email/password)
 - **Text Input**: Basic HTML `<textarea>` + state
 - **AI Integration**: Google Gemini API
@@ -159,22 +158,25 @@ Gemini analyzes pasted document content per document type and returns structured
 
 ## Design System Requirements
 ### Typography
-- **Primary Font**: JetBrains Mono for all text content
-- **Font Weights**: Regular (400), Medium (500), Bold (700)
-- **Line Heights**: Optimized for readability across devices
+- **Primary Font**: Inter for all text content (matching Supabase's technical aesthetic)
+- **Font Weights**: Light (300), Regular (400), Medium (500), Semibold (600), Bold (700)
+- **Line Heights**: Optimized for readability and technical documentation style
+- **Approach**: Clean, modern sans-serif that conveys technical competence
 
 ### Iconography
-- **Icon Library**: Heroicons (24px outline variants)
-- **Usage**: Replace all emoji icons with semantic Heroicons
-- **Consistency**: Uniform sizing and stroke width across all icons
+- **Icon Library**: Lucide React (24px outline variants)
+- **Usage**: Semantic icons with consistent stroke width
+- **Consistency**: Uniform sizing and technical aesthetic across all icons
 
 ### Visual Design Standards
-- **Landing Page**: Modern, engaging design inspired by high-quality SaaS products (Supabase-style)
-- **Authentication Pages**: Professional, trustworthy design with enhanced user experience
-- **Application Interface**: Clean, intuitive design optimized for productivity and clarity
-- **Feature Presentation**: Well-structured sections with clear value propositions
-- **User Impact**: Maximum visual appeal and user engagement
-- **Minimalist Approach**: Clean, uncluttered interface with purposeful design elements
+- **Design Philosophy**: Technical, code-savvy, and flat design approach (inspired by Supabase)
+- **Landing Page**: Clean, developer-focused design with flat UI elements and technical credibility
+- **Authentication Pages**: Minimal, trustworthy design with flat components and technical aesthetics
+- **Application Interface**: Code editor-inspired design optimized for technical users
+- **Feature Presentation**: Developer-oriented sections with clear technical value propositions
+- **Color Approach**: Flat design with no gradients - solid colors with technical color palette
+- **Layout Philosophy**: Grid-based, code-like structure with optimal spacing for technical content
+- **User Experience**: Technical competence and developer-friendly interface design
 
 ## Functional Requirements
 - User authentication
@@ -232,22 +234,22 @@ A comprehensive visual redesign to transform Ecomply into a premium, user-focuse
 4. **Brand Consistency**: Establish a cohesive visual identity throughout the application
 
 ### Key Improvements
-- **Typography**: Migrate to JetBrains Mono for enhanced readability and technical credibility
-- **Iconography**: Replace all emoji icons with professional Heroicons
-- **Landing Page**: Complete redesign with Supabase-inspired layout and feature presentation
-- **Authentication Experience**: Modern, trustworthy login/signup flow with enhanced UX
-- **Application Interface**: Professional dashboard and form designs for optimal usability
-- **Color Scheme**: Sophisticated, accessible color palette with semantic usage
-- **Layout**: Improved spacing, typography hierarchy, and visual balance
-- **Interactive Elements**: Enhanced hover states, transitions, and micro-interactions
+- **Typography**: Migrate to Inter font family for technical credibility and modern aesthetics (Supabase-style)
+- **Iconography**: Replace all emoji icons with professional Lucide React icons
+- **Landing Page**: Complete redesign with technical, flat design approach and developer-focused presentation
+- **Authentication Experience**: Minimal, code-savvy login/signup flow with flat UI components
+- **Application Interface**: Technical dashboard and form designs optimized for developer users
+- **Color Scheme**: Flat color palette with no gradients - technical and accessible color system
+- **Layout**: Developer-inspired spacing, typography hierarchy, and grid-based visual structure
+- **Interactive Elements**: Subtle hover states and flat design interactions
 
 ### Success Metrics
-- Improved user engagement rates
-- Increased conversion from landing page to registration
-- Enhanced authentication completion rates
-- Reduced authentication form abandonment
-- Enhanced user satisfaction and trust indicators
-- Professional brand perception
+- Improved technical user engagement rates
+- Increased developer-focused conversion from landing page to registration
+- Enhanced authentication completion rates with developer-friendly UX
+- Reduced form abandonment through technical interface design
+- Enhanced user satisfaction with code-savvy interface aesthetics
+- Professional technical brand perception among developers and technical users
 
 ---
 
