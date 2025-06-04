@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
+import { FileText, Lock, ClipboardCheck } from "lucide-react";
 import ResultsDashboard from "@/components/results-dashboard";
 
 interface Step {
@@ -128,37 +129,37 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
   };
 
   const renderStepContent = () => {
-    switch (currentStep) {
-      case 1: // Terms of Service Input
+    switch (currentStep) {      case 1: // Terms of Service Input
         return (
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <span className="text-2xl">📄</span>
+          <Card className="border-slate-700 shadow-sm bg-slate-800/80 backdrop-blur-sm">
+            <CardHeader className="pb-6">
+              <CardTitle className="flex items-center gap-3 text-xl font-semibold text-white">
+                <FileText className="w-6 h-6 text-blue-400" />
                 Terms of Service Analysis
               </CardTitle>
-              <p className="text-gray-600">
-                Paste your Terms of Service document below to check compliance with RA No. 11967
+              <p className="text-slate-300 leading-relaxed">
+                Paste your Terms of Service document below to check compliance with RA No. 11967. 
+                Our AI will analyze your document for data protection requirements.
               </p>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-6">
               <div>
-                <label htmlFor="terms" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="terms" className="block text-sm font-semibold text-slate-200 mb-3">
                   Terms of Service Content
                 </label>
                 <Textarea
                   id="terms"
                   value={documents.terms}
                   onChange={(e) => setDocuments(prev => ({ ...prev, terms: e.target.value }))}
-                  placeholder="Paste your Terms of Service document here..."
-                  className="min-h-[300px] resize-none"
+                  placeholder="Paste your complete Terms of Service document here..."
+                  className="min-h-[300px] resize-none border-slate-600 bg-slate-700/50 text-white placeholder-slate-400 focus:border-blue-400 focus:ring-blue-400/20"
                 />
               </div>
 
               <Button 
                 onClick={() => handleAnalyze('terms')} 
                 disabled={loading || !documents.terms.trim()}
-                className="w-full"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors"
                 size="lg"
               >
                 {loading ? (
@@ -172,7 +173,7 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
               </Button>
             </CardContent>
           </Card>
-        );      case 2: // Terms of Service Results
+        );case 2: // Terms of Service Results
         return (
           <div>
             {analysisResults.terms ? (
@@ -183,45 +184,44 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
                 onContinue={handleContinue}
               />
             ) : (
-              <Card>
+              <Card className="border-slate-700 bg-slate-800/80">
                 <CardContent>
-                  <p className="text-gray-500">No analysis results available.</p>
+                  <p className="text-slate-400">No analysis results available.</p>
                 </CardContent>
               </Card>
             )}
           </div>
-        );
-
-      case 3: // Privacy Policy Input
+        );      case 3: // Privacy Policy Input
         return (
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <span className="text-2xl">🔒</span>
+          <Card className="border-slate-700 shadow-sm bg-slate-800/80 backdrop-blur-sm">
+            <CardHeader className="pb-6">
+              <CardTitle className="flex items-center gap-3 text-xl font-semibold text-white">
+                <Lock className="w-6 h-6 text-blue-400" />
                 Privacy Policy Analysis
               </CardTitle>
-              <p className="text-gray-600">
-                Now paste your Privacy Policy document to complete the compliance analysis
+              <p className="text-slate-300 leading-relaxed">
+                Now paste your Privacy Policy document to complete the compliance analysis. 
+                This will help ensure full coverage of data protection requirements.
               </p>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-6">
               <div>
-                <label htmlFor="privacy" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="privacy" className="block text-sm font-semibold text-slate-200 mb-3">
                   Privacy Policy Content
                 </label>
                 <Textarea
                   id="privacy"
                   value={documents.privacy}
                   onChange={(e) => setDocuments(prev => ({ ...prev, privacy: e.target.value }))}
-                  placeholder="Paste your Privacy Policy document here..."
-                  className="min-h-[300px] resize-none"
+                  placeholder="Paste your complete Privacy Policy document here..."
+                  className="min-h-[300px] resize-none border-slate-600 bg-slate-700/50 text-white placeholder-slate-400 focus:border-blue-400 focus:ring-blue-400/20"
                 />
               </div>
 
               <Button 
                 onClick={() => handleAnalyze('privacy')} 
                 disabled={loading || !documents.privacy.trim()}
-                className="w-full"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors"
                 size="lg"
               >
                 {loading ? (
@@ -235,7 +235,7 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
               </Button>
             </CardContent>
           </Card>
-        );      case 4: // Privacy Policy Results
+        );case 4: // Privacy Policy Results
         return (
           <div>
             {analysisResults.privacy ? (
@@ -246,9 +246,9 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
                 onContinue={handleContinue}
               />
             ) : (
-              <Card>
+              <Card className="border-slate-700 bg-slate-800/80">
                 <CardContent>
-                  <p className="text-gray-500">No analysis results available.</p>
+                  <p className="text-slate-400">No analysis results available.</p>
                 </CardContent>
               </Card>
             )}
@@ -269,20 +269,23 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
                 documentType="combined"
                 onRestart={handleRestartAnalysis}
                 showDownloadReport={true}
-              />
-            ) : (
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <span className="text-2xl">📋</span>
+              />            ) : (
+              <Card className="border-slate-700 shadow-sm bg-slate-800/80 backdrop-blur-sm">
+                <CardHeader className="pb-6">
+                  <CardTitle className="flex items-center gap-3 text-xl font-semibold text-white">
+                    <ClipboardCheck className="w-6 h-6 text-blue-400" />
                     Complete Compliance Report
                   </CardTitle>
-                  <p className="text-gray-600">
-                    Your comprehensive RA No. 11967 compliance analysis
+                  <p className="text-slate-300 leading-relaxed">
+                    Your comprehensive RA No. 11967 compliance analysis combining both documents
                   </p>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-500">Complete both document analyses to view the combined report.</p>
+                  <div className="bg-blue-900/50 border border-blue-600 rounded-lg p-4">
+                    <p className="text-blue-200 font-medium">
+                      Complete both document analyses to view the combined report.
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             )}
@@ -293,40 +296,43 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
         return null;
     }
   };
-
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Progress Indicator */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Document Analysis Progress</CardTitle>
+      <Card className="border-slate-700 shadow-sm bg-slate-800/80 backdrop-blur-sm">
+        <CardHeader className="pb-4">
+          <CardTitle className="text-lg font-semibold text-white">
+            Analysis Progress
+          </CardTitle>
           <div className="space-y-4">
-            <Progress value={progress} className="w-full" />
-            <div className="flex justify-between text-sm text-gray-600">
-              <span>Step {currentStep} of {steps.length}</span>
-              <span>{Math.round(progress)}% Complete</span>
+            <Progress value={progress} className="w-full h-2" />
+            <div className="flex justify-between text-sm text-slate-300">
+              <span className="font-medium">Step {currentStep} of {steps.length}</span>
+              <span className="text-blue-400 font-medium">{Math.round(progress)}% Complete</span>
             </div>
           </div>
         </CardHeader>
-        <CardContent>
+        <CardContent className="pt-0">
           {/* Step Roadmap */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
-            {steps.map((step, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+            {steps.map((step) => (
               <div
                 key={step.id}
-                className={`p-3 rounded text-center text-sm ${
+                className={`p-4 rounded-lg text-center text-sm transition-all duration-200 ${
                   step.id === currentStep
-                    ? 'bg-blue-100 text-blue-900 border-2 border-blue-300'
+                    ? 'bg-blue-900/50 text-blue-200 border-2 border-blue-500 shadow-sm'
                     : step.completed
-                    ? 'bg-green-100 text-green-900'
-                    : 'bg-gray-100 text-gray-600'
+                    ? 'bg-green-900/50 text-green-200 border border-green-600'
+                    : 'bg-slate-700/50 text-slate-400 border border-slate-600'
                 }`}
               >
-                <div className="font-medium">{step.title}</div>
-                <div className="text-xs mt-1 opacity-75">{step.description}</div>
+                <div className="font-semibold mb-1">{step.title}</div>
+                <div className="text-xs opacity-80 leading-tight">{step.description}</div>
                 {step.completed && (
-                  <div className="mt-2">
-                    <span className="text-green-600">✓</span>
+                  <div className="mt-3">
+                    <span className="inline-flex items-center justify-center w-5 h-5 bg-green-500 text-white rounded-full text-xs">
+                      ✓
+                    </span>
                   </div>
                 )}
               </div>
@@ -336,19 +342,17 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
       </Card>
 
       {/* Current Step Content */}
-      {renderStepContent()}
-
-      {/* Navigation */}
-      <div className="flex justify-between">
-        <Button
+      {renderStepContent()}      {/* Navigation */}
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-4">        <Button
           variant="outline"
           onClick={handleBack}
           disabled={currentStep === 1}
+          className="border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white hover:border-slate-600 font-medium px-6 py-2 disabled:opacity-50"
         >
           ← Back
         </Button>
         
-        <div className="text-sm text-gray-500">
+        <div className="text-sm text-slate-300 bg-slate-800 px-4 py-2 rounded-lg text-center font-medium border border-slate-600">
           {currentStep === 1 && "Start by analyzing your Terms of Service"}
           {currentStep === 2 && "Review results, then continue to Privacy Policy"}
           {currentStep === 3 && "Now analyze your Privacy Policy"}
@@ -363,9 +367,15 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
               (currentStep === 2 && !analysisResults.terms) ||
               (currentStep === 4 && !analysisResults.privacy)
             }
+            className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 disabled:opacity-50"
           >
             Next →
           </Button>
+        )}
+        
+        {/* Spacer for centering when next button is not present */}
+        {(currentStep === 1 || currentStep === 3 || currentStep === 5) && (
+          <div className="w-20"></div>
         )}
       </div>
     </div>

@@ -12,7 +12,7 @@ Help Filipino e-commerce businesses validate if their customer-facing documents 
 ## Target Users
 - Local e-commerce website operators
 - Online sellers using marketplaces or their own platforms
-- Developers/teams building compliance tools for small businesses
+- Small to medium business owners seeking compliance assistance
 
 ## Core Features
 - **Authentication**: Email/password login (via Supabase)
@@ -87,11 +87,13 @@ Gemini analyzes pasted document content per document type and returns structured
 
 ## UI Requirements
 ### 1. Landing Page
-- Hero section with quick intro to RA No. 11967
-- Compliance value prop
-- CTA: Paste your document
-- Modern, minimalist design with ample whitespace
-- Subtle background patterns or gradients
+- Hero section with compelling headline and subtext about RA No. 11967
+- Clean flat design with modern typography (Inter font)
+- Feature showcase with icon-supported value propositions
+- Social proof and credibility indicators
+- Engaging CTAs with clear user journey guidance
+- Professional layout with business-focused messaging
+- Responsive design that looks exceptional on all devices
 
 ### 2. Dashboard (Post Login)
 - Step-by-step progress indicator (roadmap style)
@@ -101,6 +103,27 @@ Gemini analyzes pasted document content per document type and returns structured
 - Loading spinner
 - Clean card-based layout with subtle shadows
 - Responsive grid system for optimal spacing
+
+### 2.5. Authentication Pages
+- **Modern Split-Screen Layout**: Left side with compelling visuals, right side with form
+- **Brand Consistency**: Cohesive design language with landing page
+- **Enhanced Form Design**: 
+  - Clean, spacious input fields with floating labels
+  - Real-time validation feedback with clear error messages
+  - Password strength indicator for signup process
+  - Smooth transitions between login and signup modes
+- **Trust & Security Elements**:
+  - Security badges and compliance indicators
+  - Clear privacy policy and terms links
+  - Social proof elements (user testimonials or metrics)
+- **Loading & Success States**:
+  - Skeleton loading for better perceived performance
+  - Success animations and clear feedback messages
+  - Redirect handling with loading indicators
+- **Mobile Optimization**: 
+  - Touch-friendly design with proper spacing
+  - Simplified layout for smaller screens
+  - Progressive enhancement for better UX
 
 ### 3. Analysis Pages
 - **Terms of Service Analysis Page**:
@@ -126,10 +149,34 @@ Gemini analyzes pasted document content per document type and returns structured
 
 ## Tech Stack
 - **Frontend**: Next.js (with TypeScript), TailwindCSS, shadcn/ui
+- **Typography**: Inter font family for technical credibility and modern aesthetics (Supabase-style)
+- **Icons**: Lucide React for consistent, minimalist iconography
 - **Auth**: Supabase (email/password)
 - **Text Input**: Basic HTML `<textarea>` + state
 - **AI Integration**: Google Gemini API
 - **Deployment**: Vercel
+
+## Design System Requirements
+### Typography
+- **Primary Font**: Inter for all text content (matching Supabase's technical aesthetic)
+- **Font Weights**: Light (300), Regular (400), Medium (500), Semibold (600), Bold (700)
+- **Line Heights**: Optimized for readability and technical documentation style
+- **Approach**: Clean, modern sans-serif that conveys technical competence
+
+### Iconography
+- **Icon Library**: Lucide React (24px outline variants)
+- **Usage**: Semantic icons with consistent stroke width
+- **Consistency**: Uniform sizing and technical aesthetic across all icons
+
+### Visual Design Standards
+- **Design Philosophy**: Technical, code-savvy, and flat design approach (inspired by Supabase)
+- **Landing Page**: Clean, developer-focused design with flat UI elements and technical credibility
+- **Authentication Pages**: Minimal, trustworthy design with flat components and technical aesthetics
+- **Application Interface**: Code editor-inspired design optimized for technical users
+- **Feature Presentation**: Developer-oriented sections with clear technical value propositions
+- **Color Approach**: Flat design with no gradients - solid colors with technical color palette
+- **Layout Philosophy**: Grid-based, code-like structure with optimal spacing for technical content
+- **User Experience**: Technical competence and developer-friendly interface design
 
 ## Functional Requirements
 - User authentication
@@ -172,6 +219,37 @@ Gemini analyzes pasted document content per document type and returns structured
 - AI-generated compliant boilerplates
 - Save document history
 - Section-highlighting in original text
+- Advanced analytics dashboard
+- Multi-language support
+- API for third-party integrations
+
+## Visual Design Improvement Initiative
+### Overview
+A comprehensive visual redesign to transform Ecomply into a premium, user-focused compliance platform that maximizes user engagement and trust.
+
+### Design Objectives
+1. **Professional Excellence**: Create a polished, enterprise-grade appearance
+2. **User Engagement**: Design for maximum visual impact and user retention
+3. **Modern Aesthetics**: Implement contemporary design trends and best practices
+4. **Brand Consistency**: Establish a cohesive visual identity throughout the application
+
+### Key Improvements
+- **Typography**: Migrate to Inter font family for technical credibility and modern aesthetics (Supabase-style)
+- **Iconography**: Replace all emoji icons with professional Lucide React icons
+- **Landing Page**: Complete redesign with technical, flat design approach and developer-focused presentation
+- **Authentication Experience**: Minimal, code-savvy login/signup flow with flat UI components
+- **Application Interface**: Technical dashboard and form designs optimized for developer users
+- **Color Scheme**: Flat color palette with no gradients - technical and accessible color system
+- **Layout**: Developer-inspired spacing, typography hierarchy, and grid-based visual structure
+- **Interactive Elements**: Subtle hover states and flat design interactions
+
+### Success Metrics
+- Improved technical user engagement rates
+- Increased developer-focused conversion from landing page to registration
+- Enhanced authentication completion rates with developer-friendly UX
+- Reduced form abandonment through technical interface design
+- Enhanced user satisfaction with code-savvy interface aesthetics
+- Professional technical brand perception among developers and technical users
 
 ---
 

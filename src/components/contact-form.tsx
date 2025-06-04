@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Mail, CheckCircle } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -51,20 +52,18 @@ export default function ContactForm() {
       setIsSubmitting(false);
     }
   };
-
   if (isSubmitted) {
     return (
-      <section id="contact" className="py-24 sm:py-32 bg-gray-50">
+      <section id="contact" className="py-24 sm:py-32 bg-slate-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl">
-            <Card className="border-green-200 bg-green-50">
+            <Card className="border-green-600 bg-slate-800 text-white">
               <CardContent className="pt-6">
                 <div className="text-center">
-                  <span className="text-4xl">✅</span>
-                  <h3 className="mt-4 text-lg font-semibold text-green-800">
+                  <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />                  <h3 className="mt-4 text-lg font-semibold text-green-400">
                     Message Sent Successfully!
-                  </h3>                  <p className="mt-2 text-green-700">
-                    Thank you for contacting us! Your message has been sent to arisantonioco@gmail.com and we'll get back to you soon.
+                  </h3>                  <p className="mt-2 text-slate-300">
+                    Thank you for contacting us! Your message has been sent and we&apos;ll get back to you soon.
                   </p>
                 </div>
               </CardContent>
@@ -74,32 +73,36 @@ export default function ContactForm() {
       </section>
     );
   }
-
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-gray-50">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+    <section id="contact" className="py-24 sm:py-32 bg-slate-900 relative overflow-hidden">
+      {/* Technical Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+      
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium mb-6">
+            <Mail className="w-4 h-4" />
+            Get in Touch
+          </div>
+          
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Contact Us
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Have questions about Ecomply or need help with compliance? We're here to help.
+          </h2>          <p className="mt-6 text-lg leading-8 text-slate-300">
+            Have questions about Ecomply or need help with compliance? We&apos;re here to help.
           </p>
         </div>
 
         <div className="mx-auto mt-16 max-w-xl">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <span className="text-2xl">📧</span>
-                Get in Touch
+          <Card className="bg-slate-800 border-slate-700 text-white">            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-white">
+                <Mail className="w-5 h-5 text-blue-400" />
+                <span>Get in Touch</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
                       Name
                     </label>
                     <Input
@@ -110,10 +113,11 @@ export default function ContactForm() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your name"
+                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
                       Email
                     </label>
                     <Input
@@ -124,12 +128,13 @@ export default function ContactForm() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="your@email.com"
+                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
                     Subject
                   </label>
                   <Input
@@ -140,11 +145,12 @@ export default function ContactForm() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="What's this about?"
+                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
                     Message
                   </label>
                   <Textarea
@@ -155,26 +161,32 @@ export default function ContactForm() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us how we can help you..."
+                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
                   />
                 </div>
 
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="w-full"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                 >
+                  <Mail className="w-4 h-4 mr-2" />
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </CardContent>
-          </Card>          {/* Contact Info */}
-          <div className="mt-8 text-center">
-            <p className="text-sm text-gray-600">
+          </Card>
+            {/* Contact Info */}
+          <div className="mt-8 text-center p-6 bg-slate-800 rounded-lg border border-slate-700">
+            <p className="text-sm text-slate-400 mb-2">
               For technical support or partnership inquiries:
             </p>
-            <p className="text-sm font-medium text-gray-900 mt-1">
+            <p className="text-sm font-medium text-blue-400">
               arisantonioco@gmail.com
             </p>
+            <div className="flex items-center justify-center gap-4 mt-4 text-xs text-slate-500">
+              <span>Usually responds within 24 hours</span>
+            </div>
           </div>
         </div>
       </div>
