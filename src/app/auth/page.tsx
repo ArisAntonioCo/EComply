@@ -122,15 +122,14 @@ export default function AuthPage() {
             <span className="text-3xl font-bold">Ecomply</span>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-4xl font-bold mb-6 leading-tight">
+          {/* Headline */}          <h1 className="text-3xl font-bold mb-6 leading-tight">
             E-Commerce Legal 
             <span className="block text-blue-400">
               Compliance Made Simple
             </span>
           </h1>
 
-          <p className="text-xl text-slate-300 mb-12 leading-relaxed">
+          <p className="text-lg text-slate-300 mb-12 leading-relaxed">
             Ensure your e-commerce business complies with Philippine E-Commerce Law RA No. 11967.
           </p>
 
@@ -139,10 +138,9 @@ export default function AuthPage() {
             <div className="flex items-center space-x-4">
               <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
                 <Shield className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg">Secure & Private</h3>
-                <p className="text-slate-400 text-sm">Your documents are processed securely</p>
+              </div>              <div>
+                <h3 className="font-semibold text-base">Secure & Private</h3>
+                <p className="text-slate-400 text-xs">Your documents are processed securely</p>
               </div>
             </div>
 
@@ -150,8 +148,8 @@ export default function AuthPage() {
                 <Users className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Trusted by Businesses</h3>
-                <p className="text-slate-400 text-sm">Join hundreds of Filipino e-commerce stores</p>
+                <h3 className="font-semibold text-base">Trusted by Businesses</h3>
+                <p className="text-slate-400 text-xs">Join hundreds of Filipino e-commerce stores</p>
               </div>
             </div>
 
@@ -160,8 +158,8 @@ export default function AuthPage() {
                 <TrendingUp className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Fast Results</h3>
-                <p className="text-slate-400 text-sm">Get compliance analysis in seconds</p>
+                <h3 className="font-semibold text-base">Fast Results</h3>
+                <p className="text-slate-400 text-xs">Get compliance analysis in seconds</p>
               </div>
             </div>
           </div>
@@ -193,14 +191,13 @@ export default function AuthPage() {
           </div>
 
           {/* Form Header */}
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium mb-4">
-              <ClipboardCheck className="w-4 h-4" />
+          <div className="text-center mb-8">            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-600 bg-transparent text-slate-300 text-xs font-medium mb-4">
+              <ClipboardCheck className="w-3 h-3" />
               {isLogin ? 'Welcome Back' : 'Get Started'}
-            </div>            <h2 className="text-3xl font-bold text-white mb-2">
+            </div>            <h2 className="text-2xl font-bold text-white mb-2">
               {isLogin ? 'Sign In' : 'Create Account'}
             </h2>
-            <p className="text-slate-400">
+            <p className="text-slate-400 text-sm">
               {isLogin 
                 ? 'Access your compliance dashboard' 
                 : 'Start your compliance analysis journey'

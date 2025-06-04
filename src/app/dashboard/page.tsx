@@ -80,14 +80,14 @@ export default function Dashboard() {
       
       <div className="relative max-w-5xl mx-auto px-4 py-6 sm:px-6 lg:px-8">        {/* Dashboard Header */}
         <div className="mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium mb-4">
-            <ClipboardCheck className="w-4 h-4" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-600 bg-transparent text-slate-300 text-xs font-medium mb-4">
+            <ClipboardCheck className="w-3 h-3" />
             Compliance Dashboard
           </div>
-          <h1 className="text-2xl font-bold text-white mb-2">
+          <h1 className="text-xl font-bold text-white mb-2">
             RA No. 11967 Compliance Analysis
           </h1>
-          <p className="text-slate-300">
+          <p className="text-xs text-slate-400">
             Analyze your Terms of Service and Privacy Policy documents for Philippine e-commerce compliance
           </p>
         </div>
