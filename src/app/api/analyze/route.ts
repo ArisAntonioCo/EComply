@@ -42,10 +42,9 @@ export async function POST(request: NextRequest) {
       
       // Final trim
       cleanedText = cleanedText.trim()
-      
-      analysisResult = JSON.parse(cleanedText)
+        analysisResult = JSON.parse(cleanedText)
     } catch (parseError) {
-      console.error('Failed to parse Gemini response:', text)
+      console.error('Failed to parse Gemini response:', parseError, text)
       return NextResponse.json(
         { error: 'Invalid response from AI service' },
         { status: 500 }

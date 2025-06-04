@@ -173,9 +173,8 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
               {/* Section Scores */}
               {results.section_scores && Object.keys(results.section_scores).length > 0 && (
                 <div>
-                  <h4 className="font-semibold mb-2">Section Breakdown</h4>
-                  <div className="space-y-2">
-                    {Object.entries(results.section_scores).map(([section, score]: [string, any]) => (
+                  <h4 className="font-semibold mb-2">Section Breakdown</h4>                  <div className="space-y-2">
+                    {Object.entries(results.section_scores).map(([section, score]: [string, number]) => (
                       <div key={section} className="flex justify-between items-center p-2 bg-gray-50 rounded">
                         <span className="text-sm">{section}</span>
                         <span className={`font-bold ${getScoreColor(score)}`}>{score}%</span>
@@ -239,9 +238,8 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
               AI Recommendations
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              {Object.entries(results.recommendations).map(([section, recommendation]: [string, any]) => (
+          <CardContent>            <div className="space-y-3">
+              {Object.entries(results.recommendations).map(([section, recommendation]: [string, string]) => (
                 <div key={section} className="p-3 bg-blue-50 rounded">
                   <h5 className="font-medium text-blue-900 mb-1">{section}</h5>
                   <p className="text-sm text-blue-700">{recommendation}</p>

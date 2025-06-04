@@ -309,9 +309,8 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
           </div>
         </CardHeader>
         <CardContent>
-          {/* Step Roadmap */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
-            {steps.map((step, index) => (
+          {/* Step Roadmap */}          <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
+            {steps.map((step) => (
               <div
                 key={step.id}
                 className={`p-3 rounded text-center text-sm ${

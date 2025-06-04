@@ -51,9 +51,9 @@ export default function AuthPage() {
         })
         if (error) throw error
         setMessage('Account created! Please check your email to confirm your account. If you don\'t receive an email, please check your spam folder or contact support.')
-      }
-    } catch (error: any) {
-      setMessage(`Error: ${error.message}`)    } finally {
+      }    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An error occurred'
+      setMessage(`Error: ${errorMessage}`)} finally {
       setLoading(false)
     }
   }

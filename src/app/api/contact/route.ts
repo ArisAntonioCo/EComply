@@ -11,9 +11,7 @@ export async function POST(request: NextRequest) {
         { error: 'All fields are required' },
         { status: 400 }
       );
-    }
-
-    // Create email content
+    }    // Create email content (will be used for email sending when implemented)
     const emailContent = `
       New Contact Form Submission from Ecomply
       
@@ -26,7 +24,9 @@ export async function POST(request: NextRequest) {
       ---
       Sent from Ecomply Contact Form
       Timestamp: ${new Date().toISOString()}
-    `;
+    `;    // Log the contact attempt for debugging
+    console.log('Contact form submission received:', { name, email, subject });
+    console.log('Email content prepared:', emailContent.substring(0, 100) + '...');
 
     // Send email via Supabase Edge Function or external service
     // For now, we'll use a simple approach with Supabase's built-in email
@@ -92,10 +92,9 @@ export async function POST(request: NextRequest) {
       //     subject: `[Ecomply Contact] ${subject}`,
       //     html: emailBody.html
       //   }),
-      // });
-
-      console.log('Contact form submission:', { name, email, subject });
-      console.log('Email would be sent to: arisantonioco@gmail.com');
+      // });      console.log('Contact form submission:', { name, email, subject });
+      console.log('Email would be sent to:', emailBody.to);
+      console.log('Email subject:', emailBody.subject);
       
     } catch (emailError) {
       console.error('Email sending error:', emailError);
