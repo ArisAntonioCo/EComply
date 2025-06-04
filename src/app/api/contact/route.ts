@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
@@ -11,27 +14,11 @@ export async function POST(request: NextRequest) {
         { error: 'All fields are required' },
         { status: 400 }
       );
-    }    // Create email content (will be used for email sending when implemented)
-    const emailContent = `
-      New Contact Form Submission from Ecomply
-      
-      From: ${name} (${email})
-      Subject: ${subject}
-      
-      Message:
-      ${message}
-      
-      ---
-      Sent from Ecomply Contact Form
-      Timestamp: ${new Date().toISOString()}
-    `;    // Log the contact attempt for debugging
-    console.log('Contact form submission received:', { name, email, subject });
-    console.log('Email content prepared:', emailContent.substring(0, 100) + '...');
+    }
 
-    // Send email via Supabase Edge Function or external service
-    // For now, we'll use a simple approach with Supabase's built-in email
-    // In production, you might want to use services like Resend, SendGrid, etc.
-    
+    // Log the contact attempt for debugging
+    console.log('Contact form submission received:', { name, email, subject });
+
     // Store the contact submission in the database (optional)
     const { error: dbError } = await supabase
       .from('contact_submissions')
@@ -52,10 +39,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Send email notification to website owner
-    // Note: This requires Supabase Auth email configuration or external email service
-    try {
-      // Method 1: Using Supabase Auth (requires proper SMTP configuration)
-      const emailBody = {
+    try {      const emailResponse = await resend.emails.send({
+        from: 'onboarding@resend.dev', // Default Resend domain for testing
         to: 'arisantonioco@gmail.com',
         subject: `[Ecomply Contact] ${subject}`,
         html: `
@@ -76,29 +61,22 @@ export async function POST(request: NextRequest) {
             </p>
           </div>
         `
-      };
+      });
 
-      // For production, you would implement actual email sending here
-      // Example with Resend:
-      // const emailResponse = await fetch('https://api.resend.com/emails', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({
-      //     from: 'noreply@yourdomain.com',
-      //     to: 'arisantonioco@gmail.com',
-      //     subject: `[Ecomply Contact] ${subject}`,
-      //     html: emailBody.html
-      //   }),
-      // });      console.log('Contact form submission:', { name, email, subject });
-      console.log('Email would be sent to:', emailBody.to);
-      console.log('Email subject:', emailBody.subject);
+      if (emailResponse.error) {
+        console.error('Resend email error:', emailResponse.error);
+        throw new Error('Failed to send email');
+      }
+
+      console.log('Email sent successfully:', emailResponse.data?.id);
       
     } catch (emailError) {
       console.error('Email sending error:', emailError);
-      // Don't fail the entire request if email fails
+      // Don't fail the entire request if email fails, but inform the user
+      return NextResponse.json({
+        success: false,
+        message: 'Form submitted but email notification failed. Please contact us directly at arisantonioco@gmail.com'
+      }, { status: 500 });
     }
 
     return NextResponse.json({
