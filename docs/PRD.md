@@ -105,6 +105,27 @@ Gemini analyzes pasted document content per document type and returns structured
 - Clean card-based layout with subtle shadows
 - Responsive grid system for optimal spacing
 
+### 2.5. Authentication Pages
+- **Modern Split-Screen Layout**: Left side with compelling visuals, right side with form
+- **Brand Consistency**: Cohesive design language with landing page
+- **Enhanced Form Design**: 
+  - Clean, spacious input fields with floating labels
+  - Real-time validation feedback with clear error messages
+  - Password strength indicator for signup process
+  - Smooth transitions between login and signup modes
+- **Trust & Security Elements**:
+  - Security badges and compliance indicators
+  - Clear privacy policy and terms links
+  - Social proof elements (user testimonials or metrics)
+- **Loading & Success States**:
+  - Skeleton loading for better perceived performance
+  - Success animations and clear feedback messages
+  - Redirect handling with loading indicators
+- **Mobile Optimization**: 
+  - Touch-friendly design with proper spacing
+  - Simplified layout for smaller screens
+  - Progressive enhancement for better UX
+
 ### 3. Analysis Pages
 - **Terms of Service Analysis Page**:
   - Overall Terms of Service Compliance Score with circular progress
@@ -149,6 +170,8 @@ Gemini analyzes pasted document content per document type and returns structured
 
 ### Visual Design Standards
 - **Landing Page**: Modern, engaging design inspired by high-quality SaaS products (Supabase-style)
+- **Authentication Pages**: Professional, trustworthy design with enhanced user experience
+- **Application Interface**: Clean, intuitive design optimized for productivity and clarity
 - **Feature Presentation**: Well-structured sections with clear value propositions
 - **User Impact**: Maximum visual appeal and user engagement
 - **Minimalist Approach**: Clean, uncluttered interface with purposeful design elements
@@ -212,6 +235,8 @@ A comprehensive visual redesign to transform Ecomply into a premium, user-focuse
 - **Typography**: Migrate to JetBrains Mono for enhanced readability and technical credibility
 - **Iconography**: Replace all emoji icons with professional Heroicons
 - **Landing Page**: Complete redesign with Supabase-inspired layout and feature presentation
+- **Authentication Experience**: Modern, trustworthy login/signup flow with enhanced UX
+- **Application Interface**: Professional dashboard and form designs for optimal usability
 - **Color Scheme**: Sophisticated, accessible color palette with semantic usage
 - **Layout**: Improved spacing, typography hierarchy, and visual balance
 - **Interactive Elements**: Enhanced hover states, transitions, and micro-interactions
@@ -219,6 +244,8 @@ A comprehensive visual redesign to transform Ecomply into a premium, user-focuse
 ### Success Metrics
 - Improved user engagement rates
 - Increased conversion from landing page to registration
+- Enhanced authentication completion rates
+- Reduced authentication form abandonment
 - Enhanced user satisfaction and trust indicators
 - Professional brand perception
 
