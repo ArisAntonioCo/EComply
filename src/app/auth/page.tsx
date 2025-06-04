@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import { ClipboardCheck, Shield, Users, TrendingUp, Eye, EyeOff, CheckCircle, AlertCircle } from 'lucide-react'
 
 export default function AuthPage() {
@@ -169,12 +169,10 @@ export default function AuthPage() {
                 <p className="text-blue-200">AI-powered compliance analysis you can trust</p>
               </div>
             </div>
-          </div>
-
-          {/* Testimonial */}
+          </div>          {/* Testimonial */}
           <div className="mt-12 p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
             <p className="text-blue-100 italic mb-3">
-              "Ecomply saved us countless hours of legal review. The AI analysis is incredibly accurate and actionable."
+              &ldquo;Ecomply saved us countless hours of legal review. The AI analysis is incredibly accurate and actionable.&rdquo;
             </p>
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full flex items-center justify-center">
