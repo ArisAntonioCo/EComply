@@ -17,13 +17,13 @@ export default function Home() {
               <Shield className="w-3 h-3" />
               RA No. 11967 Compliance
             </div>{/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium mb-6 leading-tight">
               E-Commerce Legal 
               <span className="block text-blue-400">
                 Compliance Made Simple
               </span>
             </h1>            {/* Subheadline */}
-            <p className="text-lg lg:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm lg:text-sm text-slate-300 mb-12 max-w-3xl mx-auto font-semibold leading-relaxed">
               Ensure your e-commerce platform complies with Philippine E-Commerce Law RA No. 11967. 
               Get instant AI-powered analysis of your Terms of Service and Privacy Policy.
             </p>            {/* CTA Buttons */}
