@@ -154,6 +154,36 @@
   - [ ] Accessibility audit and improvements
   - [ ] User testing and feedback integration
 
+## Code Structure Refactoring & Organization
+### Phase 1: Page Architecture Refactoring ✅ COMPLETED
+- [x] **Landing Page Refactoring**:
+  - [x] Extract hero section into `src/sections/HeroSection.tsx`
+  - [x] Extract features section into `src/sections/FeaturesSection.tsx`
+  - [x] Extract benefits section into `src/sections/BenefitsSection.tsx`
+  - [x] Extract CTA section into `src/sections/CTASection.tsx`
+  - [x] Update `src/app/page.tsx` to import and use section components
+  - [x] Ensure clean separation of concerns and reusability
+
+- [x] **Authentication Page Refactoring**:
+  - [x] Extract left branding panel into `src/sections/auth/BrandingSection.tsx`
+  - [x] Extract auth form into `src/sections/auth/AuthFormSection.tsx`
+  - [x] Update `src/app/auth/page.tsx` to import and use section components
+  - [x] Maintain current functionality while improving organization
+  - [x] Test that all functionality remains intact after refactoring
+
+### Phase 2: Clean Architecture Patterns ✅ COMPLETED
+- [x] **Establish Section-Based Architecture**:
+  - [x] Create `/src/sections` directory for page sections
+  - [x] Create `/src/sections/auth` subdirectory for auth-specific sections
+  - [x] Ensure each section is self-contained and focused
+  - [x] Document section responsibilities and usage
+
+- [x] **Maintain Clean Component Separation**:
+  - [x] Keep `/components` folder unchanged - only for truly reusable UI components
+  - [x] Never add page-specific sections to `/components` folder
+  - [x] Ensure `/components` contains only reusable elements (navbar, footer, contact-form, ui components)
+  - [x] All page sections go directly in `/src/sections` - never nested in `/components`
+
 ## UI Polish & Responsiveness
 - [x] Review UI for consistency and performance
 - [x] Ensure all pages are mobile-first and fully responsive
