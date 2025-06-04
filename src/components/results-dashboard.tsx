@@ -26,11 +26,10 @@ interface ResultsDashboardProps {
 
 export default function ResultsDashboard({ results, documentType, onRestart, onContinue, showDownloadReport }: ResultsDashboardProps) {
   const overallScore = results.overall_compliance_score;
-  
-  const getScoreColor = (score: number) => {
-    if (score >= 80) return "text-green-400";
-    if (score >= 60) return "text-yellow-400";
-    return "text-red-400";
+    const getScoreColor = (score: number) => {
+    if (score >= 80) return "text-green-300";
+    if (score >= 60) return "text-yellow-300";
+    return "text-red-300";
   };
 
   const getScoreBgColor = (score: number) => {
@@ -117,15 +116,14 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
     <div className="space-y-6">
       {/* Overall Compliance Header */}
       <Card className={`${getScoreBgColor(overallScore)}`}>
-        <CardHeader>
-          <div className="text-center">            <div className="flex items-center justify-center gap-3 mb-4">
+        <CardHeader>            <div className="text-center">            <div className="flex items-center justify-center gap-3 mb-4">
               {getDocumentIcon()}
-              <CardTitle className="text-xl text-white">{getDocumentTitle()}</CardTitle>
+              <CardTitle className="text-xl text-blue-100">{getDocumentTitle()}</CardTitle>
             </div>
             <div className={`text-6xl font-bold ${getScoreColor(overallScore)}`}>
               {overallScore}%
             </div>
-            <p className="text-xs text-slate-400 mt-2">{getComplianceLevel(overallScore)}</p>
+            <p className="text-xs text-slate-500 mt-2">{getComplianceLevel(overallScore)}</p>
           </div>
         </CardHeader>
       </Card>
@@ -134,24 +132,21 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
       {documentType === "combined" && results.combined_results ? (
         // Combined Report View
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-slate-700 bg-slate-800/80">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
+          <Card className="border-slate-700 bg-slate-800/80">            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-slate-100">
                 <FileText className="w-6 h-6 text-blue-400" />
                 Terms of Service
               </CardTitle>
             </CardHeader>
-            <CardContent>              <div className="text-center">
-                <div className={`text-4xl font-bold ${getScoreColor(results.combined_results.terms.overall_compliance_score)}`}>
+            <CardContent>              <div className="text-center">                <div className={`text-4xl font-bold ${getScoreColor(results.combined_results.terms.overall_compliance_score)}`}>
                   {results.combined_results.terms.overall_compliance_score}%
                 </div>
-                <p className="text-xs text-slate-400">Compliance Score</p>
+                <p className="text-xs text-slate-500">Compliance Score</p>
               </div>
             </CardContent>
           </Card>
-          <Card className="border-slate-700 bg-slate-800/80">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
+          <Card className="border-slate-700 bg-slate-800/80">            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-slate-100">
                 <Lock className="w-6 h-6 text-blue-400" />
                 Privacy Policy
               </CardTitle>
@@ -160,27 +155,25 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
                 <div className={`text-4xl font-bold ${getScoreColor(results.combined_results.privacy.overall_compliance_score)}`}>
                   {results.combined_results.privacy.overall_compliance_score}%
                 </div>
-                <p className="text-xs text-slate-400">Compliance Score</p>
+                <p className="text-xs text-slate-500">Compliance Score</p>
               </div>
             </CardContent>
           </Card>
         </div>
       ) : (
         // Individual Document View
-        <Card className="border-slate-700 bg-slate-800/80">
-          <CardHeader>
-            <CardTitle className="text-white">Document Analysis Details</CardTitle>
+        <Card className="border-slate-700 bg-slate-800/80">          <CardHeader>
+            <CardTitle className="text-slate-100">Document Analysis Details</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
               {/* Section Scores */}
               {results.section_scores && Object.keys(results.section_scores).length > 0 && (
                 <div>
-                  <h4 className="text-sm font-semibold mb-2 text-slate-200">Section Breakdown</h4>
+                  <h4 className="text-sm font-semibold mb-2 text-blue-100">Section Breakdown</h4>
                   <div className="space-y-2">
-                    {Object.entries(results.section_scores).map(([section, score]: [string, number]) => (
-                      <div key={section} className="flex justify-between items-center p-2 bg-slate-700/50 rounded">
-                        <span className="text-sm text-slate-300">{section}</span>
+                    {Object.entries(results.section_scores).map(([section, score]: [string, number]) => (                      <div key={section} className="flex justify-between items-center p-2 bg-slate-700/50 rounded-md">
+                        <span className="text-sm text-slate-200">{section}</span>
                         <span className={`font-bold ${getScoreColor(score)}`}>{score}%</span>
                       </div>
                     ))}
@@ -191,10 +184,9 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
               {/* Missing Sections */}
               {results.missing_sections && results.missing_sections.length > 0 && (
                 <div>
-                  <h4 className="text-sm font-semibold mb-2 text-red-400">Missing Sections</h4>
+                  <h4 className="text-sm font-semibold mb-2 text-red-300">Missing Sections</h4>
                   <ul className="space-y-1">
-                    {results.missing_sections.map((section, index) => (
-                      <li key={index} className="text-sm text-red-300 bg-red-900/30 p-2 rounded border border-red-600">
+                    {results.missing_sections.map((section, index) => (                      <li key={index} className="text-sm text-red-300 bg-red-900/30 p-2 rounded-md border border-red-600">
                         • {section}
                       </li>
                     ))}
@@ -207,9 +199,8 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
       )}
 
       {/* Improvement Suggestions */}
-      <Card className="border-slate-700 bg-slate-800/80">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-white">
+      <Card className="border-slate-700 bg-slate-800/80">        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-slate-100">
             <Lightbulb className="w-6 h-6 text-blue-400" />
             Improvement Suggestions
           </CardTitle>
@@ -218,9 +209,7 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
           <div className="space-y-4">
             {improvements.map((suggestion, index) => (
               <div key={index} className="border-l-4 border-blue-500 pl-4 py-2">
-                <div className="flex items-center gap-2 mb-1">
-                  <h4 className="text-sm font-semibold text-slate-200">{suggestion.title}</h4>
-                  <span className={`text-xs px-2 py-1 rounded ${
+                <div className="flex items-center gap-2 mb-1">                  <h4 className="text-sm font-semibold text-blue-100">{suggestion.title}</h4>                  <span className={`text-xs px-2 py-1 rounded-full ${
                     suggestion.priority === 'High' ? 'bg-red-900/50 text-red-300 border border-red-600' :
                     suggestion.priority === 'Medium' ? 'bg-yellow-900/50 text-yellow-300 border border-yellow-600' :
                     'bg-green-900/50 text-green-300 border border-green-600'
@@ -228,7 +217,7 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
                     {suggestion.priority} Priority
                   </span>
                 </div>
-                <p className="text-xs text-slate-400">{suggestion.description}</p>
+                <p className="text-xs text-slate-500">{suggestion.description}</p>
               </div>
             ))}
           </div>
@@ -237,57 +226,51 @@ export default function ResultsDashboard({ results, documentType, onRestart, onC
 
       {/* AI Recommendations */}
       {results.recommendations && Object.keys(results.recommendations).length > 0 && (
-        <Card className="border-slate-700 bg-slate-800/80">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-white">
+        <Card className="border-slate-700 bg-slate-800/80">          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-slate-100">
               <Bot className="w-6 h-6 text-blue-400" />
               AI Recommendations
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              {Object.entries(results.recommendations).map(([section, recommendation]: [string, string]) => (
-                <div key={section} className="p-3 bg-blue-900/30 rounded border border-blue-600">                  <h5 className="text-sm font-medium text-blue-200 mb-1">{section}</h5>
-                  <p className="text-xs text-blue-300">{recommendation}</p>
+              {Object.entries(results.recommendations).map(([section, recommendation]: [string, string]) => (                <div key={section} className="p-3 bg-blue-900/30 rounded-md border border-blue-600">                      <h5 className="text-sm font-medium text-blue-100 mb-1">{section}</h5>
+                  <p className="text-xs text-blue-200">{recommendation}</p>
                 </div>
               ))}
             </div>
           </CardContent>
         </Card>
       )}      {/* Action Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 pt-6">        {onRestart && (
-          <Button onClick={onRestart} size="sm" className="flex-1 flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-slate-200 hover:text-white border border-slate-600 hover:border-slate-500 text-xs">
+      <div className="flex flex-col sm:flex-row gap-4 pt-6">        {onRestart && (          <Button onClick={onRestart} size="sm" className="flex-1 flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-slate-100 hover:text-white border border-slate-600 hover:border-slate-500 text-xs">
             <RotateCcw className="w-3 h-3" />
             Start New Analysis
           </Button>
         )}
-        {onContinue && (
-          <Button onClick={onContinue} size="sm" className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-xs">
+        {onContinue && (          <Button onClick={onContinue} size="sm" className="flex-1 bg-blue-600 hover:bg-blue-700 text-slate-50 text-xs">
             {documentType === "terms" ? "Continue to Privacy Policy →" : 
              documentType === "privacy" ? "View Combined Report →" : "Continue"}
           </Button>
         )}
-        {showDownloadReport && (
-          <Button size="sm" className="flex-1 flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700 text-xs" disabled>
+        {showDownloadReport && (          <Button size="sm" className="flex-1 flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-100 hover:text-white border border-slate-700 text-xs" disabled>
             <Download className="w-3 h-3" />
             Download Full Report
             <span className="ml-2 text-xs">(Coming Soon)</span>
           </Button>
-        )}
-        <Button variant="outline" size="sm" className="flex-1 flex items-center gap-2 border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white hover:border-slate-600 text-xs" disabled>
+        )}        <Button variant="outline" size="sm" className="flex-1 flex items-center gap-2 border-slate-700 bg-slate-800 text-slate-100 hover:bg-slate-700 hover:text-white hover:border-slate-600 text-xs" disabled>
           <Mail className="w-3 h-3" />
           Email Report
           <span className="ml-2 text-xs">(Coming Soon)</span>
         </Button>
       </div>
 
-      {/* Legal Disclaimer */}
-      <Card className="bg-yellow-900/30 border-yellow-600">
+      {/* Legal Disclaimer */}      <Card className="bg-yellow-900/30 border-yellow-600">
         <CardContent className="pt-6">
           <div className="flex items-start gap-3">
             <AlertTriangle className="w-6 h-6 text-yellow-400 mt-1" />
-            <div>              <h4 className="text-sm font-semibold text-yellow-200 mb-2">Legal Disclaimer</h4>
-              <p className="text-xs text-yellow-300">
+            <div>
+              <h4 className="text-sm font-semibold text-yellow-200 mb-2">Legal Disclaimer</h4>
+              <p className="text-xs text-yellow-400">
                 This analysis is for informational purposes only and does not constitute legal advice. 
                 For compliance assurance, please consult with qualified legal professionals familiar 
                 with Philippine e-commerce law and RA No. 11967.

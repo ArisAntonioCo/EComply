@@ -11,10 +11,8 @@ export default function Footer() {
               <div className="flex items-center justify-center w-10 h-10 bg-blue-500/10 rounded-lg border border-blue-500/20">
                 <Shield className="w-5 h-5 text-blue-400" />
               </div>
-              <span className="text-xl font-bold text-white">Ecomply</span>
-            </div><p className="text-slate-400 text-base leading-relaxed mb-8 max-w-sm">
-              AI-powered compliance platform helping Filipino e-commerce businesses navigate RA No. 11967 with confidence and ease.
-            </p>
+              <span className="text-xl font-bold text-white">EComply</span>
+            </div>
             
             {/* Social Links */}
             <div className="flex items-center gap-4">
@@ -176,9 +174,8 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="mt-16 pt-8 border-t border-slate-800/50">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="flex flex-col gap-2 md:flex-row md:items-center md:gap-6">
-              <p className="text-slate-500 text-sm">
-                © {new Date().getFullYear()} Ecomply. All rights reserved.
+            <div className="flex flex-col gap-2 md:flex-row md:items-center md:gap-6">              <p className="text-slate-500 text-sm">
+                © {new Date().getFullYear()} EComply. All rights reserved.
               </p>
               <p className="text-slate-500 text-sm">
                 Built for Filipino e-commerce compliance

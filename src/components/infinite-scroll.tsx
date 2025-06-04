@@ -15,31 +15,31 @@ const complianceItems = [
 
 export default function InfiniteScroll() {
   return (
-    <div className="relative w-full overflow-hidden py-8 text-fade-edges">
+    <div className="relative w-full overflow-hidden py-4 sm:py-8 text-fade-edges">
       {/* Scrolling content without mask */}
       <div className="flex animate-scroll">
         {/* First set */}
-        <div className="flex items-center space-x-12 flex-shrink-0">
+        <div className="flex items-center space-x-6 sm:space-x-12 flex-shrink-0">
           {complianceItems.map((item, index) => (
             <div
               key={`first-${index}`}
-              className="flex items-center space-x-3 text-slate-300 whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity duration-300"
+              className="flex items-center space-x-2 sm:space-x-3 text-slate-300 whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity duration-300"
             >
-              <item.icon className={`w-5 h-5 ${item.color}`} />
-              <span className="text-sm font-medium">{item.text}</span>
+              <item.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${item.color} flex-shrink-0`} />
+              <span className="text-xs sm:text-sm font-medium">{item.text}</span>
             </div>
           ))}
         </div>
         
         {/* Duplicate set for seamless loop */}
-        <div className="flex items-center space-x-12 flex-shrink-0 ml-12">
+        <div className="flex items-center space-x-6 sm:space-x-12 flex-shrink-0 ml-6 sm:ml-12">
           {complianceItems.map((item, index) => (
             <div
               key={`second-${index}`}
-              className="flex items-center space-x-3 text-slate-300 whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity duration-300"
+              className="flex items-center space-x-2 sm:space-x-3 text-slate-300 whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity duration-300"
             >
-              <item.icon className={`w-5 h-5 ${item.color}`} />
-              <span className="text-sm font-medium">{item.text}</span>
+              <item.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${item.color} flex-shrink-0`} />
+              <span className="text-xs sm:text-sm font-medium">{item.text}</span>
             </div>
           ))}
         </div>

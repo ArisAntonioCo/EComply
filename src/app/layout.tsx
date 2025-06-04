@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import LayoutWrapper from "@/components/layout-wrapper";
@@ -21,6 +21,11 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Ecomply - Filipino E-commerce Compliance",
   description: "Ensure your Filipino e-commerce business complies with RA No. 11967 through AI-powered document analysis",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
-import { FileText, Lock, ClipboardCheck } from "lucide-react";
+import { ScanSearch, ShieldAlert, BarChart2 } from "lucide-react";
 import ResultsDashboard from "@/components/results-dashboard";
 
 interface Step {
@@ -131,21 +131,20 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
   const renderStepContent = () => {
     switch (currentStep) {      case 1: // Terms of Service Input
         return (
-          <Card className="border-slate-700 shadow-sm bg-slate-800/80 backdrop-blur-sm">
-            <CardHeader className="pb-6">              <CardTitle className="flex items-center gap-3 text-lg font-semibold text-white">
-                <FileText className="w-6 h-6 text-blue-400" />
+          <Card className="border-slate-700 shadow-sm bg-slate-800/80 backdrop-blur-sm">            <CardHeader className="pb-6">              <CardTitle className="flex items-center gap-3 text-lg font-semibold text-slate-100">
+                <div className="flex items-center justify-center w-8 h-8 rounded-md bg-blue-900/40 border border-blue-600/40">
+                  <ScanSearch className="w-4 h-4 text-blue-400" />
+                </div>
                 Terms of Service Analysis
               </CardTitle>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-300 leading-relaxed">
                 Paste your Terms of Service document below to check compliance with RA No. 11967. 
                 Our AI will analyze your document for data protection requirements.
               </p>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div>                <label htmlFor="terms" className="block text-xs font-semibold text-slate-400 mb-3">
+            <CardContent className="space-y-6">              <div>                <label htmlFor="terms" className="block text-xs font-semibold text-blue-200 mb-3">
                   Terms of Service Content
-                </label>
-                <Textarea
+                </label>                <Textarea
                   id="terms"
                   value={documents.terms}
                   onChange={(e) => setDocuments(prev => ({ ...prev, terms: e.target.value }))}
@@ -155,7 +154,7 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
               </div>              <Button 
                 onClick={() => handleAnalyze('terms')} 
                 disabled={loading || !documents.terms.trim()}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors text-xs"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-slate-50 font-medium py-3 rounded-lg transition-colors text-xs"
                 size="sm"
               >
                 {loading ? (
@@ -169,10 +168,9 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
               </Button>
             </CardContent>
           </Card>
-        );case 2: // Terms of Service Results
+        );        case 2: // Terms of Service Results
         return (
-          <div>
-            {analysisResults.terms ? (
+          <div>            {analysisResults.terms ? (
               <ResultsDashboard
                 results={analysisResults.terms}
                 documentType="terms"
@@ -182,28 +180,27 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
             ) : (
               <Card className="border-slate-700 bg-slate-800/80">
                 <CardContent>
-                  <p className="text-slate-400">No analysis results available.</p>
+                  <p className="text-slate-300">No analysis results available.</p>
                 </CardContent>
               </Card>
             )}
           </div>
         );      case 3: // Privacy Policy Input
         return (
-          <Card className="border-slate-700 shadow-sm bg-slate-800/80 backdrop-blur-sm">
-            <CardHeader className="pb-6">              <CardTitle className="flex items-center gap-3 text-lg font-semibold text-white">
-                <Lock className="w-6 h-6 text-blue-400" />
+          <Card className="border-slate-700 shadow-sm bg-slate-800/80 backdrop-blur-sm">            <CardHeader className="pb-6">              <CardTitle className="flex items-center gap-3 text-lg font-semibold text-slate-100">
+                <div className="flex items-center justify-center w-8 h-8 rounded-md bg-blue-900/40 border border-blue-600/40">
+                  <ShieldAlert className="w-4 h-4 text-blue-400" />
+                </div>
                 Privacy Policy Analysis
               </CardTitle>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-300 leading-relaxed">
                 Now paste your Privacy Policy document to complete the compliance analysis. 
                 This will help ensure full coverage of data protection requirements.
               </p>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div>                <label htmlFor="privacy" className="block text-xs font-semibold text-slate-400 mb-3">
+            <CardContent className="space-y-6">              <div>                <label htmlFor="privacy" className="block text-xs font-semibold text-blue-200 mb-3">
                   Privacy Policy Content
-                </label>
-                <Textarea
+                </label>                <Textarea
                   id="privacy"
                   value={documents.privacy}
                   onChange={(e) => setDocuments(prev => ({ ...prev, privacy: e.target.value }))}
@@ -213,7 +210,7 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
               </div>              <Button 
                 onClick={() => handleAnalyze('privacy')} 
                 disabled={loading || !documents.privacy.trim()}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors text-xs"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-slate-50 font-medium py-3 rounded-lg transition-colors text-xs"
                 size="sm"
               >
                 {loading ? (
@@ -227,10 +224,9 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
               </Button>
             </CardContent>
           </Card>
-        );case 4: // Privacy Policy Results
+        );        case 4: // Privacy Policy Results
         return (
-          <div>
-            {analysisResults.privacy ? (
+          <div>            {analysisResults.privacy ? (
               <ResultsDashboard
                 results={analysisResults.privacy}
                 documentType="privacy"
@@ -240,12 +236,12 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
             ) : (
               <Card className="border-slate-700 bg-slate-800/80">
                 <CardContent>
-                  <p className="text-slate-400">No analysis results available.</p>
+                  <p className="text-slate-300">No analysis results available.</p>
                 </CardContent>
               </Card>
             )}
           </div>
-        );      case 5: // Combined Report
+        );case 5: // Combined Report
         return (
           <div>
             {analysisResults.terms && analysisResults.privacy ? (
@@ -261,19 +257,18 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
                 documentType="combined"
                 onRestart={handleRestartAnalysis}
                 showDownloadReport={true}
-              />            ) : (
-              <Card className="border-slate-700 shadow-sm bg-slate-800/80 backdrop-blur-sm">
-                <CardHeader className="pb-6">                  <CardTitle className="flex items-center gap-3 text-lg font-semibold text-white">
-                    <ClipboardCheck className="w-6 h-6 text-blue-400" />
+              />            ) : (              <Card className="border-slate-700 shadow-sm bg-slate-800/80 backdrop-blur-sm">                <CardHeader className="pb-6">                  <CardTitle className="flex items-center gap-3 text-lg font-semibold text-slate-100">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-md bg-blue-900/40 border border-blue-600/40">
+                      <BarChart2 className="w-4 h-4 text-blue-400" />
+                    </div>
                     Complete Compliance Report
                   </CardTitle>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-xs text-slate-300 leading-relaxed">
                     Your comprehensive RA No. 11967 compliance analysis combining both documents
                   </p>
-                </CardHeader>
-                <CardContent>
+                </CardHeader>                <CardContent>
                   <div className="bg-blue-900/50 border border-blue-600 rounded-lg p-4">
-                    <p className="text-blue-200 font-medium">
+                    <p className="text-blue-100 font-medium">
                       Complete both document analyses to view the combined report.
                     </p>
                   </div>
@@ -288,34 +283,27 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
     }
   };
   return (
-    <div className="space-y-8">
-      {/* Progress Indicator */}
-      <Card className="border-slate-700 shadow-sm bg-slate-800/80 backdrop-blur-sm">
-        <CardHeader className="pb-4">          <CardTitle className="text-base font-semibold text-white">
+    <div className="space-y-8">      {/* Progress Indicator */}
+      <Card className="border-slate-700 shadow-sm bg-slate-800/80 backdrop-blur-sm">        <CardHeader className="pb-4">          <CardTitle className="text-base font-semibold text-blue-100">
             Analysis Progress
-          </CardTitle>          <div className="space-y-4">
-            <div className="relative">
-              <Progress value={progress} className="w-full h-3 bg-slate-800 shadow-lg" />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-indigo-500/20 blur-sm"></div>
-            </div>
-            <div className="flex justify-between text-xs text-slate-400">
+          </CardTitle><div className="space-y-4">            <div className="relative">
+              <Progress value={progress} className="w-full h-3 bg-slate-800" />
+            </div><div className="flex justify-between text-xs text-slate-300">
               <span className="font-medium">Step {currentStep} of {steps.length}</span>
-              <span className="text-blue-400 font-medium">{Math.round(progress)}% Complete</span>
+              <span className="text-blue-300 font-medium">{Math.round(progress)}% Complete</span>
             </div>
           </div>
         </CardHeader>
         <CardContent className="pt-0">
           {/* Step Roadmap */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-            {steps.map((step) => (
-              <div
-                key={step.id}
-                className={`p-4 rounded-lg text-center text-xs transition-all duration-200 ${
+            {steps.map((step) => (              <div
+                key={step.id}                className={`p-4 rounded-lg text-center text-xs transition-all duration-200 ${
                   step.id === currentStep
-                    ? 'bg-blue-900/50 text-blue-200 border-2 border-blue-500 shadow-sm'
+                    ? 'bg-blue-900/50 text-blue-100 border-2 border-blue-500 shadow-sm'
                     : step.completed
-                    ? 'bg-green-900/50 text-green-200 border border-green-600'
-                    : 'bg-slate-700/50 text-slate-400 border border-slate-600'
+                    ? 'bg-green-900/50 text-green-100 border border-green-600'
+                    : 'bg-slate-700/50 text-slate-300 border border-slate-600'
                 }`}
               >
                 <div className="text-sm font-semibold mb-1">{step.title}</div>
@@ -340,26 +328,24 @@ export default function DocumentAnalysisWorkflow({ onAnalyze, loading, onRestart
           size="sm"
           onClick={handleBack}
           disabled={currentStep === 1}
-          className="border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white hover:border-slate-600 font-medium px-6 py-2 disabled:opacity-50 text-xs"
+          className="border-slate-700 bg-slate-800 text-slate-100 hover:bg-slate-700 hover:text-white hover:border-slate-600 font-medium px-6 py-2 disabled:opacity-50 text-xs"
         >
           ← Back
         </Button>
-        
-        <div className="text-xs text-slate-400 bg-slate-800 px-4 py-2 rounded-lg text-center font-medium border border-slate-600">
+          <div className="text-xs text-blue-200 bg-slate-800 px-4 py-2 rounded-lg text-center font-medium border border-slate-600">
           {currentStep === 1 && "Start by analyzing your Terms of Service"}
           {currentStep === 2 && "Review results, then continue to Privacy Policy"}
           {currentStep === 3 && "Now analyze your Privacy Policy"}
           {currentStep === 4 && "Review results, then view combined report"}
           {currentStep === 5 && "Your complete compliance analysis"}
-        </div>        {currentStep < 5 && currentStep !== 1 && currentStep !== 3 && (
-          <Button
+        </div>{currentStep < 5 && currentStep !== 1 && currentStep !== 3 && (          <Button
             size="sm"
             onClick={handleContinue}
             disabled={
               (currentStep === 2 && !analysisResults.terms) ||
               (currentStep === 4 && !analysisResults.privacy)
             }
-            className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 disabled:opacity-50 text-xs"
+            className="bg-blue-600 hover:bg-blue-700 text-slate-50 font-medium px-6 py-2 disabled:opacity-50 text-xs"
           >
             Next →
           </Button>
