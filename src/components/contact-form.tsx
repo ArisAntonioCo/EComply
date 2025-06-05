@@ -96,10 +96,21 @@ export default function ContactForm() {
           </div>
         </div>
       </section>
-    );
-  }  return (
-    <section id="contact" className="py-24 sm:py-32 bg-slate-950">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8"><div className="mx-auto max-w-2xl text-center">          {/* Badge */}
+    );  }  return (
+    <section id="contact" className="py-24 sm:py-32 bg-slate-950 relative overflow-hidden">
+      {/* Radial glow effect at bottom */}
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 pointer-events-none">
+        {/* Layered radial glow effect - positioned at bottom of section */}
+        <div className="absolute -bottom-48 left-1/2 transform -translate-x-1/2 w-[48rem] h-[20rem] bg-slate-950/15 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 left-1/2 transform -translate-x-1/2 w-[36rem] h-[15rem] bg-blue-900/8 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-36 left-1/2 transform -translate-x-1/2 w-[30rem] h-[12rem] bg-slate-950/12 rounded-full blur-2xl"></div>
+        <div className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 w-[24rem] h-[10rem] bg-blue-800/6 rounded-full blur-2xl"></div>
+        <div className="absolute -bottom-28 left-1/2 transform -translate-x-1/2 w-[18rem] h-[8rem] bg-slate-950/10 rounded-full blur-xl"></div>
+        <div className="absolute -bottom-24 left-1/2 transform -translate-x-1/2 w-[12rem] h-[6rem] bg-blue-600/8 rounded-full blur-xl"></div>
+        <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 w-[8rem] h-[4rem] bg-slate-950/15 rounded-full blur-lg"></div>
+      </div>
+      
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10"><div className="mx-auto max-w-2xl text-center">          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-600 bg-slate-800 text-slate-300 text-xs font-medium mb-6">
             <Mail className="w-3 h-3" />
             Get in Touch

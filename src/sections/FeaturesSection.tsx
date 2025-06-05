@@ -1,25 +1,23 @@
 import { Bot, BarChart3, MapPin, Shield, Zap, Users, Check } from "lucide-react";
 
-export default function FeaturesSection() {
-  return (
-    <section id="features" className="relative py-32 bg-white overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-20">          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-medium mb-8">
+export default function FeaturesSection() {  return (
+    <section id="features" className="relative py-16 sm:py-24 lg:py-32 bg-white overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">        {/* Section Header */}
+        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16 lg:mb-20">          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-medium mb-6 sm:mb-8">
             <Shield className="w-3.5 h-3.5" />
             Comprehensive Compliance Platform
-          </div>          <h2 className="text-3xl lg:text-4xl font-bold text-slate-950 mb-6 tracking-tight">
+          </div>          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-950 mb-4 sm:mb-6 tracking-tight px-4">
             Complete Tools for 
             <span className="text-blue-600 font-playfair italic"> Compliance</span>
-          </h2>          <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-6">
+          </h2>          <p className="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-4 sm:mb-6 px-4">
             Professional-grade tools designed specifically for Filipino e-commerce businesses to ensure legal compliance and build customer trust.
           </p>
             {/* Trusted by section */}
-          <div className="flex items-center justify-center gap-3">
-            <Check className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-slate-600">Trusted by 500+ Filipino businesses</span>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 px-4">
+            <Check className="w-4 h-4 text-blue-600 flex-shrink-0" />
+            <span className="text-sm font-medium text-slate-600 text-center">Trusted by 500+ Filipino businesses</span>
               {/* Overlapping company icons */}
-            <div className="flex items-center -space-x-1 ml-2">
+            <div className="flex items-center -space-x-1 ml-0 sm:ml-2">
               {/* Shopify */}
               <div className="flex items-center justify-center w-6 h-6 bg-white rounded-md border border-slate-200 shadow-sm">
                 <svg className="w-3 h-3 text-slate-600" viewBox="0 0 24 24" fill="currentColor">
@@ -57,19 +55,19 @@ export default function FeaturesSection() {
           </div>
         </div>        {/* Features Grid with Gray Lines and Plus Icons */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Grid Background with Lines */}
-          <div className="absolute inset-0 grid grid-cols-3 grid-rows-2">
+          {/* Grid Background with Lines - Hidden on mobile */}
+          <div className="absolute inset-0 hidden md:grid grid-cols-3 grid-rows-2">
             {/* Vertical Lines */}
             <div className="border-r border-slate-200"></div>
             <div className="border-r border-slate-200"></div>
             <div></div>
-            <div className="border-r border-slate-200 border-t border-slate-200"></div>
-            <div className="border-r border-slate-200 border-t border-slate-200"></div>
+            <div className="border-r border-slate-200 border-t"></div>
+            <div className="border-r border-slate-200 border-t"></div>
             <div className="border-t border-slate-200"></div>
           </div>
 
-          {/* Plus Icons at Grid Intersections - Only Middle Two */}
-          <div className="absolute inset-0 pointer-events-none">            
+          {/* Plus Icons at Grid Intersections - Only Middle Two, Hidden on mobile */}
+          <div className="absolute inset-0 pointer-events-none hidden md:block">            
             {/* Middle row intersections */}
             <div className="absolute top-1/2 left-1/3 w-4 h-4 -translate-x-1/2 -translate-y-1/2 bg-white border border-slate-200 rounded-full flex items-center justify-center">
               <div className="w-2 h-2 text-slate-400">
@@ -85,12 +83,9 @@ export default function FeaturesSection() {
                 </svg>
               </div>
             </div>
-          </div>
-
-          {/* Features Content */}
-          <div className="relative grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-0">
-            {/* Feature 1 */}
-            <div className="p-8 text-left">
+          </div>          {/* Features Content */}
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-auto md:grid-rows-2 gap-0">            {/* Feature 1 */}
+            <div className="p-4 md:p-8 text-left border-b md:border-b-0 border-slate-200">
               <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-4">
                 <Bot className="w-5 h-5 text-blue-600" />
               </div>
@@ -101,7 +96,7 @@ export default function FeaturesSection() {
             </div>
 
             {/* Feature 2 */}
-            <div className="p-8 text-left">
+            <div className="p-4 md:p-8 text-left border-b md:border-b-0 border-slate-200">
               <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-4">
                 <BarChart3 className="w-5 h-5 text-blue-600" />
               </div>
@@ -112,7 +107,7 @@ export default function FeaturesSection() {
             </div>
 
             {/* Feature 3 */}
-            <div className="p-8 text-left">
+            <div className="p-4 md:p-8 text-left border-b md:border-b-0 border-slate-200">
               <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-4">
                 <MapPin className="w-5 h-5 text-blue-600" />
               </div>
@@ -123,7 +118,7 @@ export default function FeaturesSection() {
             </div>
 
             {/* Feature 4 */}
-            <div className="p-8 text-left">
+            <div className="p-4 md:p-8 text-left border-b md:border-b-0 border-slate-200">
               <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-4">
                 <Shield className="w-5 h-5 text-blue-600" />
               </div>
@@ -134,7 +129,7 @@ export default function FeaturesSection() {
             </div>
 
             {/* Feature 5 */}
-            <div className="p-8 text-left">
+            <div className="p-4 md:p-8 text-left border-b md:border-b-0 border-slate-200">
               <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-4">
                 <Zap className="w-5 h-5 text-blue-600" />
               </div>
@@ -145,7 +140,7 @@ export default function FeaturesSection() {
             </div>
 
             {/* Feature 6 */}
-            <div className="p-8 text-left">
+            <div className="p-4 md:p-8 text-left">
               <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-4">
                 <Users className="w-5 h-5 text-blue-600" />
               </div>

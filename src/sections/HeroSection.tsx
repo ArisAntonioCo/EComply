@@ -4,11 +4,11 @@ import { ClipboardCheck, Shield, CheckCircle, ArrowRight } from "lucide-react";
 import InfiniteScroll from "@/components/infinite-scroll";
 
 export default function HeroSection() {  return (
-    <section className="relative overflow-hidden bg-slate-950 text-white min-h-screen flex items-center w-full">
-      {/* Sherlock-inspired Background */}
+    <section id="hero" className="relative overflow-hidden bg-slate-900 text-white min-h-screen flex items-center w-full">
+      {/* Background */}
       <div className="absolute inset-0 z-0">
         {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950 to-slate-950"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-900"></div>
         
         {/* Animated gradient orbs - responsive sizing */}
         <div className="absolute top-10 md:top-20 left-4 md:left-20 w-48 md:w-96 h-48 md:h-96 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
@@ -27,35 +27,33 @@ export default function HeroSection() {  return (
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-600 bg-transparent text-slate-300 text-xs font-medium mb-6 sm:mb-8">
             <Shield className="w-3 h-3" />
             RA No. 11967 Compliance
-          </div>
-
-          {/* Headline */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium mb-4 sm:mb-6 leading-tight text-center w-full">
-            <span className="block w-full">E-Commerce Legal</span>
-            <span className="block w-full text-white font-playfair italic text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal tracking-wide lowercase">
-              compliance made simple
+          </div>          {/* Headline */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium mb-6 sm:mb-8 leading-tight text-center w-full">
+            <span className="block w-full mb-2 sm:mb-3">Legal Compliance</span>
+            <span className="block w-full text-white font-playfair italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal tracking-wide lowercase">
+              simplified
             </span>
-          </h1>
-
-          {/* Subheadline */}
-          <p className="text-sm sm:text-base lg:text-lg text-slate-300 mb-8 sm:mb-12 max-w-3xl mx-auto font-medium leading-relaxed px-4 sm:px-0 w-full">
-            Ensure your e-commerce platform complies with Philippine E-Commerce Law RA No. 11967. 
-            Get instant AI-powered analysis of your Terms of Service and Privacy Policy.
+          </h1>          {/* Subheadline */}
+          <p className="text-sm sm:text-base lg:text-lg text-slate-300 mb-8 sm:mb-12 max-w-3xl mx-auto font-medium leading-relaxed px-4 sm:px-6 w-full">
+            AI-powered RA No. 11967 compliance analysis that&apos;s 6x faster than traditional legal review. 
+            Professional document analysis in seconds, not weeks.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 px-4 sm:px-0 w-full">
-            <Link href="/auth" className="w-full sm:w-auto max-w-xs sm:max-w-none">
-              <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-base font-medium w-full">
-                <ClipboardCheck className="w-4 h-4 mr-2" />
-                Start Free Analysis
+          <div className="flex flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 px-4 sm:px-0 w-full max-w-md mx-auto">
+            <Link href="/auth" className="flex-1">
+              <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-3 text-sm sm:text-base font-medium w-full">
+                <ClipboardCheck className="w-4 h-4 mr-1 sm:mr-2" />
+                <span className="hidden sm:inline">Start Free Analysis</span>
+                <span className="sm:hidden">Get Started</span>
               </Button>
             </Link>
             
-            <Link href="/dashboard" className="w-full sm:w-auto max-w-xs sm:max-w-none">
-              <Button variant="outline" size="sm" className="px-6 py-3 text-base font-medium border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white hover:border-slate-600 w-full">
-                View Demo
-                <ArrowRight className="w-3 h-3 ml-2" />
+            <Link href="/dashboard" className="flex-1">
+              <Button variant="outline" size="sm" className="px-4 sm:px-6 py-3 text-sm sm:text-base font-medium border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white hover:border-slate-600 w-full">
+                <span className="hidden sm:inline">View Demo</span>
+                <span className="sm:hidden">Demo</span>
+                <ArrowRight className="w-3 h-3 ml-1 sm:ml-2" />
               </Button>
             </Link>
           </div>
