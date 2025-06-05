@@ -122,6 +122,11 @@
   body {
     @apply bg-background text-foreground overflow-x-hidden;
   }
+  
+  /* Global Playfair font styling */
+  .font-playfair {
+    letter-spacing: -0.025em; /* tracking-tight */
+  }
 }
 
 @layer utilities {

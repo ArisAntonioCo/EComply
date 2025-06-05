@@ -66,7 +66,12 @@ RESEND_API_KEY=your_resend_api_key
 
 1. Create a Supabase project
 2. Run the SQL script in `src/sql/contact_submissions.sql` in your Supabase SQL editor
-3. Configure authentication settings in Supabase dashboard
+3. Configure authentication settings in Supabase dashboard:
+   - **Site URL**: Set to your production domain (e.g., `https://yourdomain.com`)
+   - **Additional redirect URLs**: Add `https://yourdomain.com/auth/callback` and `https://yourdomain.com/dashboard`
+   - **Email confirmations**: Choose to enable or disable based on your needs
+
+> **Important**: For production deployment authentication issues, see `docs/SUPABASE_AUTH_CONFIG.md` for detailed configuration guidance.
 
 ### 5. Run the Development Server
 

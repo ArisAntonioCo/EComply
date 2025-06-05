@@ -27,13 +27,11 @@ export default function HeroSection() {  return (
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-600 bg-transparent text-slate-300 text-xs font-medium mb-6 sm:mb-8">
             <Shield className="w-3 h-3" />
             RA No. 11967 Compliance
-          </div>          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium mb-6 sm:mb-8 leading-tight text-center w-full">
-            <span className="block w-full mb-2 sm:mb-3">Legal Compliance</span>
-            <span className="block w-full text-white font-playfair italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal tracking-wide lowercase">
-              simplified
+          </div>          {/* Headline */}          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-medium mb-6 sm:mb-8 leading-tight text-center w-full">
+            <span className="block w-full -mb-2 sm:-mb-3 md:-mb-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-inter font-bold">Legal Compliance</span>            <span className="block w-full text-white font-playfair italic text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-semibold">
+              Simplified
             </span>
-          </h1>          {/* Subheadline */}
+          </h1>{/* Subheadline */}
           <p className="text-sm sm:text-base lg:text-lg text-slate-300 mb-8 sm:mb-12 max-w-3xl mx-auto font-medium leading-relaxed px-4 sm:px-6 w-full">
             AI-powered RA No. 11967 compliance analysis that&apos;s 6x faster than traditional legal review. 
             Professional document analysis in seconds, not weeks.
