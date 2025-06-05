@@ -34,6 +34,7 @@ export default function AuthFormSection() {
   const passwordStrength = getPasswordStrength(password)
   const strengthLabels = ['Very Weak', 'Weak', 'Fair', 'Good', 'Strong']
   const strengthColors = ['bg-red-500', 'bg-orange-500', 'bg-yellow-500', 'bg-blue-500', 'bg-green-500']
+
   useEffect(() => {
     // Check if user is already authenticated
     const checkAuth = async () => {
@@ -42,13 +43,6 @@ export default function AuthFormSection() {
         // Redirect to dashboard if already logged in
         window.location.href = '/dashboard'
       }
-    }
-    
-    // Check for error messages in URL params
-    const urlParams = new URLSearchParams(window.location.search)
-    const error = urlParams.get('error')
-    if (error) {
-      setMessage(`Error: ${error}`)
     }
     
     checkAuth()
@@ -75,6 +69,7 @@ export default function AuthFormSection() {
       setPasswordError('')
     }
   }
+
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault()
     
@@ -101,36 +96,23 @@ export default function AuthFormSection() {
         setTimeout(() => {
           window.location.href = '/dashboard'
         }, 1000)      } else {
-        // Use production URL for email confirmation redirect
-        const baseUrl = process.env.NODE_ENV === 'production' 
-          ? 'https://e-comply.vercel.app' 
-          : (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000')
-        
         const { data, error } = await supabase.auth.signUp({
           email,
           password,
-          options: {
-            emailRedirectTo: `${baseUrl}/auth/callback`,
-          },
         })
-        
         if (error) throw error
         
-        if (data.user && !data.session) {
-          // Email confirmation required
-          setMessage('Account created! Please check your email and click the confirmation link to complete your registration.')
-        } else if (data.session) {
-          // No email confirmation required, user is automatically signed in
-          setMessage('Account created and logged in successfully! Redirecting...')
+        // Since email confirmation is disabled, user should be automatically signed in
+        if (data.user) {
+          setMessage('Account created successfully! Redirecting...')
+          // Redirect to dashboard
           setTimeout(() => {
             window.location.href = '/dashboard'
           }, 1000)
         }
-      }
-    } catch (error: unknown) {
+      }} catch (error: unknown) {
       const errorMessage = error instanceof Error ? error.message : 'An error occurred'
-      setMessage(`Error: ${errorMessage}`)
-    } finally {
+      setMessage(`Error: ${errorMessage}`)    } finally {
       setLoading(false)
     }
   }
