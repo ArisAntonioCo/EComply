@@ -65,7 +65,7 @@ export default function DashboardPage() {
   if (isAuthenticated === null) {
     return <DashboardLoadingSection />;
   }  return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-gray-50">
       {/* Add top padding to account for fixed navbar height (approximately 64px) */}
       <div className="max-w-5xl mx-auto px-4 pt-20 pb-6 sm:px-6 lg:px-8">
         <DashboardHeaderSection />

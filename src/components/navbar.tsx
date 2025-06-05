@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Shield, Menu, X } from "lucide-react";
@@ -12,6 +13,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // Initialize to true since Hero section (first section) is dark
   const [isDarkBackground, setIsDarkBackground] = useState(true);
+  const pathname = usePathname();
 
   useEffect(() => {
     // Get initial user session
@@ -31,9 +33,14 @@ export default function Navbar() {
 
     return () => subscription.unsubscribe();
   }, []);
-
   // Improved background detection logic for dynamic navbar styling
   const detectBackgroundColor = useCallback(() => {
+    // Check if we're on dashboard page - always use light theme
+    if (pathname === '/dashboard') {
+      setIsDarkBackground(false);
+      return;
+    }
+
     const navbarHeight = 80; // Approximate navbar height
     const detectionPoint = window.scrollY + navbarHeight;
       // Define sections with their backgrounds - matches the actual section IDs and backgrounds
@@ -64,11 +71,15 @@ export default function Navbar() {
     }
     
     setIsDarkBackground(currentSection.isDark);
-  }, []);
-
+  }, [pathname]);
   useEffect(() => {
     // Initial detection
     detectBackgroundColor();
+
+    // If we're on dashboard, no need for scroll listeners
+    if (pathname === '/dashboard') {
+      return;
+    }
 
     // Throttled scroll handler to improve performance
     let scrollTimeout: NodeJS.Timeout;
@@ -85,7 +96,7 @@ export default function Navbar() {
       window.removeEventListener('resize', detectBackgroundColor);
       clearTimeout(scrollTimeout);
     };
-  }, [detectBackgroundColor]);
+  }, [detectBackgroundColor, pathname]);
   
   const handleSignOut = async () => {
     await supabase.auth.signOut();
@@ -96,10 +107,9 @@ export default function Navbar() {
     nav: "fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-xl border-b border-slate-800/50",
     navContainer: "relative",
     logo: "text-blue-400 group-hover:text-blue-300",
-    logoGlow: "bg-blue-400/20",
-    brandText: "text-white group-hover:text-blue-300",
+    logoGlow: "bg-blue-400/20",    brandText: "text-white group-hover:text-blue-300",
     navLink: "text-white hover:text-blue-300",
-    userBadge: "bg-slate-800/60 backdrop-blur-sm border-slate-600/40 text-green-200",
+    userBadge: "bg-emerald-800/70 backdrop-blur-sm border-emerald-600/50 text-emerald-100",
     signOutBtn: "border-slate-600/40 bg-slate-800/60 backdrop-blur-sm text-slate-200 hover:bg-slate-700/70 hover:text-white hover:border-slate-500/60",
     signInBtn: "text-slate-300 hover:text-blue-300 hover:bg-slate-800/40 backdrop-blur-sm",
     getStartedBtn: "bg-blue-600 hover:bg-blue-700 text-white",
@@ -111,7 +121,7 @@ export default function Navbar() {
     logoGlow: "bg-blue-600/20",
     brandText: "text-slate-900 group-hover:text-blue-700",
     navLink: "text-slate-900 hover:text-blue-600",
-    userBadge: "bg-white/60 backdrop-blur-sm border-slate-300/40 text-green-700",
+    userBadge: "bg-emerald-100/80 backdrop-blur-sm border-emerald-300/60 text-emerald-800",
     signOutBtn: "border-slate-300/40 bg-white/60 backdrop-blur-sm text-slate-700 hover:bg-slate-100/70 hover:text-slate-900 hover:border-slate-400/60",
     signInBtn: "text-slate-700 hover:text-blue-600 hover:bg-white/40 backdrop-blur-sm",
     getStartedBtn: "bg-blue-600 hover:bg-blue-700 text-white",
@@ -160,9 +170,8 @@ export default function Navbar() {
             {user ? (
               // Authenticated state
               <>
-                <div className="hidden md:flex items-center space-x-3">
-                  <div className={`flex items-center space-x-2 px-3 py-1.5 ${navbarStyles.userBadge} backdrop-blur-sm border rounded-lg`}>
-                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <div className="hidden md:flex items-center space-x-3">                  <div className={`flex items-center space-x-2 px-3 py-1.5 ${navbarStyles.userBadge} backdrop-blur-sm border rounded-lg`}>
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
                     <span className="text-sm font-medium">
                       {user.email?.split('@')[0]}
                     </span>
@@ -244,9 +253,8 @@ export default function Navbar() {
             <div className={`pt-3 ${isDarkBackground ? 'border-t border-slate-700/20' : 'border-t border-slate-200/20'}`}>
               {user ? (
                 // Authenticated mobile state
-                <>
-                  <div className={`flex items-center space-x-2 px-4 py-2 mb-3 ${navbarStyles.userBadge} backdrop-blur-sm border rounded-lg`}>
-                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <>                  <div className={`flex items-center space-x-2 px-4 py-2 mb-3 ${navbarStyles.userBadge} backdrop-blur-sm border rounded-lg`}>
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
                     <span className="text-sm font-medium">
                       {user.email?.split('@')[0]}
                     </span>
