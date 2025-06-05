@@ -91,31 +91,32 @@ export default function Navbar() {
     await supabase.auth.signOut();
     setUser(null);
     setMobileMenuOpen(false);
-  };  // Dynamic styles based on background - completely seamless
+  };  // Dynamic styles based on background with navbar background and no drop shadows
   const navbarStyles = isDarkBackground ? {
-    nav: "fixed top-0 left-0 right-0 z-50",
+    nav: "fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-xl border-b border-slate-800/50",
     navContainer: "relative",
-    logo: "text-blue-400 group-hover:text-blue-300 drop-shadow-sm",
+    logo: "text-blue-400 group-hover:text-blue-300",
     logoGlow: "bg-blue-400/20",
-    brandText: "text-white group-hover:text-blue-300 drop-shadow-sm",
-    navLink: "text-white hover:text-blue-300 drop-shadow-sm",
+    brandText: "text-white group-hover:text-blue-300",
+    navLink: "text-white hover:text-blue-300",
     userBadge: "bg-slate-800/60 backdrop-blur-sm border-slate-600/40 text-green-200",
     signOutBtn: "border-slate-600/40 bg-slate-800/60 backdrop-blur-sm text-slate-200 hover:bg-slate-700/70 hover:text-white hover:border-slate-500/60",
     signInBtn: "text-slate-300 hover:text-blue-300 hover:bg-slate-800/40 backdrop-blur-sm",
-    getStartedBtn: "bg-blue-600 hover:bg-blue-700 text-white shadow-lg",
+    getStartedBtn: "bg-blue-600 hover:bg-blue-700 text-white",
     mobileToggle: "text-slate-300 hover:text-blue-300 hover:bg-slate-800/40 backdrop-blur-sm",
-    mobileMenu: "bg-slate-900/60 backdrop-blur-lg"  } : {
-    nav: "fixed top-0 left-0 right-0 z-50",
+    mobileMenu: "bg-slate-900/95 backdrop-blur-xl border-t border-slate-700/50 shadow-2xl"  } : {
+    nav: "fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/50",
     navContainer: "relative",
-    logo: "text-blue-600 group-hover:text-blue-700 drop-shadow-sm",
+    logo: "text-blue-600 group-hover:text-blue-700",
     logoGlow: "bg-blue-600/20",
-    brandText: "text-slate-900 group-hover:text-blue-700 drop-shadow-sm",
-    navLink: "text-slate-900 hover:text-blue-600 drop-shadow-sm",
+    brandText: "text-slate-900 group-hover:text-blue-700",
+    navLink: "text-slate-900 hover:text-blue-600",
     userBadge: "bg-white/60 backdrop-blur-sm border-slate-300/40 text-green-700",
     signOutBtn: "border-slate-300/40 bg-white/60 backdrop-blur-sm text-slate-700 hover:bg-slate-100/70 hover:text-slate-900 hover:border-slate-400/60",
     signInBtn: "text-slate-700 hover:text-blue-600 hover:bg-white/40 backdrop-blur-sm",
-    getStartedBtn: "bg-blue-600 hover:bg-blue-700 text-white shadow-lg",
-    mobileToggle: "text-slate-700 hover:text-blue-600 hover:bg-white/40 backdrop-blur-sm",mobileMenu: "bg-white/60 backdrop-blur-lg"
+    getStartedBtn: "bg-blue-600 hover:bg-blue-700 text-white",
+    mobileToggle: "text-slate-700 hover:text-blue-600 hover:bg-white/40 backdrop-blur-sm",
+    mobileMenu: "bg-white/95 backdrop-blur-xl border-t border-slate-200/50 shadow-2xl"
   };
   return (
     <nav className={navbarStyles.nav}>
@@ -187,11 +188,10 @@ export default function Navbar() {
                   >
                     Sign In
                   </Button>
-                </Link>
-                <Link href="/auth" className="hidden md:block">
+                </Link>                <Link href="/auth" className="hidden md:block">
                   <Button 
                     size="sm"
-                    className={`${navbarStyles.getStartedBtn} shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 font-medium text-xs backdrop-blur-sm`}
+                    className={`${navbarStyles.getStartedBtn} hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 font-medium text-xs backdrop-blur-sm`}
                   >
                     Get Started
                   </Button>
@@ -271,11 +271,10 @@ export default function Navbar() {
                     >
                       Sign In
                     </Button>
-                  </Link>
-                  <Link href="/auth" className="block" onClick={() => setMobileMenuOpen(false)}>
+                  </Link>                  <Link href="/auth" className="block" onClick={() => setMobileMenuOpen(false)}>
                     <Button 
                       size="sm"
-                      className={`w-full ${navbarStyles.getStartedBtn} shadow-lg hover:shadow-xl transition-all duration-200 font-medium text-xs backdrop-blur-sm`}
+                      className={`w-full ${navbarStyles.getStartedBtn} hover:shadow-lg transition-all duration-200 font-medium text-xs backdrop-blur-sm`}
                     >
                       Get Started
                     </Button>
