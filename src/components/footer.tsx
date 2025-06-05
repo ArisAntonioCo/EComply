@@ -127,9 +127,7 @@ export default function Footer() {
                     </a>
                   </li>
                 </ul>
-              </div>
-
-              {/* Company */}
+              </div>              {/* Company */}
               <div>
                 <h3 className="text-sm font-semibold text-white mb-4 tracking-wide">
                   Company
@@ -150,22 +148,24 @@ export default function Footer() {
                     >
                       Contact
                     </Link>
-                  </li>                  <li>
+                  </li>
+                  <li>
                     <Link 
-                      href="#" 
+                      href="/legal/terms" 
                       className="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
                     >
-                      Careers
+                      Terms of Service
                     </Link>
                   </li>
                   <li>
                     <Link 
-                      href="#" 
+                      href="/legal/privacy" 
                       className="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
                     >
-                      Blog
+                      Privacy Policy
                     </Link>
-                  </li>                </ul>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

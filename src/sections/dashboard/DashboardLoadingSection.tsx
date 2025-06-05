@@ -9,9 +9,8 @@ export default function DashboardLoadingSection() {
       <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-full blur-xl animate-pulse delay-1000"></div>
       
       {/* Main loading content */}
-      <div className="text-center pt-20 px-4 relative z-10">
-        {/* iOS-style loading spinner container */}
-        <div className="inline-flex items-center justify-center w-20 h-20 bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg border border-gray-200/50 mb-6">
+      <div className="text-center pt-20 px-4 relative z-10">        {/* iOS-style loading spinner container */}
+        <div className="inline-flex items-center justify-center w-20 h-20 bg-white/80 backdrop-blur-xl rounded-2xl border border-gray-200/50 mb-6">
           <div className="relative">
             {/* Primary spinner */}
             <div className="animate-spin rounded-full h-8 w-8 border-2 border-gray-200"></div>

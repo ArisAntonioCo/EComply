@@ -32,11 +32,10 @@ export default function Navbar() {
     );
 
     return () => subscription.unsubscribe();
-  }, []);
-  // Improved background detection logic for dynamic navbar styling
+  }, []);  // Improved background detection logic for dynamic navbar styling
   const detectBackgroundColor = useCallback(() => {
-    // Check if we're on dashboard page - always use light theme
-    if (pathname === '/dashboard') {
+    // Check if we're on dashboard or legal pages - always use light theme
+    if (pathname === '/dashboard' || pathname.startsWith('/legal/')) {
       setIsDarkBackground(false);
       return;
     }
@@ -74,10 +73,8 @@ export default function Navbar() {
   }, [pathname]);
   useEffect(() => {
     // Initial detection
-    detectBackgroundColor();
-
-    // If we're on dashboard, no need for scroll listeners
-    if (pathname === '/dashboard') {
+    detectBackgroundColor();    // If we're on dashboard or legal pages, no need for scroll listeners
+    if (pathname === '/dashboard' || pathname.startsWith('/legal/')) {
       return;
     }
 
