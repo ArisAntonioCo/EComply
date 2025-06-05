@@ -95,7 +95,8 @@ export default function AuthFormSection() {
         // Redirect to dashboard
         setTimeout(() => {
           window.location.href = '/dashboard'
-        }, 1000)      } else {
+        }, 1000)
+      } else {
         const { data, error } = await supabase.auth.signUp({
           email,
           password,
@@ -110,13 +111,17 @@ export default function AuthFormSection() {
             window.location.href = '/dashboard'
           }, 1000)
         }
-      }} catch (error: unknown) {
+      }
+    } catch (error: unknown) {
       const errorMessage = error instanceof Error ? error.message : 'An error occurred'
-      setMessage(`Error: ${errorMessage}`)    } finally {
+      setMessage(`Error: ${errorMessage}`)
+    } finally {
       setLoading(false)
     }
   }
-  return (    <section className="py-24 sm:py-32 bg-slate-950 min-h-screen flex items-center relative overflow-hidden">      {/* Radial glow effect component */}
+
+  return (
+    <section className="py-24 sm:py-32 bg-slate-950 min-h-screen flex items-center relative overflow-hidden">{/* Radial glow effect component */}
       <RadialGlow />
       
       <div className="mx-auto max-w-7xl px-6 lg:px-8 w-full relative z-10">
